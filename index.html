@@ -1,86 +1,281 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
 
-        <!--==================== UNICONS ====================-->
-        
-        
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="">
-        
-        <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swair - Mobile App Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
-        <title>Responsive Portfolio Website</title>
+
     </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            
-        </header>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                
-            </section>
+<body>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro-text">
+            <h1>Hello, I'm Swair</h1>
+            <p>A React Native developer with over 5 years of experience building high-quality cross-platform apps.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/swair-arshad-51b43718b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/swairAQ"><i class="fab fa-github" target="_blank"></i></a>
+                <a href="https://medium.com/@swairaq"><i class="fab fa-medium" target="_blank"></i></a>
+            </div>
+        </div>
+        <img src="./assets/img/profile.jpeg" alt="Profile Picture" class="profile-img">
+    </section>
 
-            <!--==================== ABOUT ====================-->
-            <section class="about section" id="about">
-                
-            </section>
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <p style="text-align: justify;">I craft mobile apps that don’t just look good—they feel right. With a
+                    deep
+                    understanding of React
+                    Native, iOS development, and a passion for seamless user experiences, I bring your ideas to life through interactive
+                    animations, haptic and sound feedback, and more.
+                    <br><br>
+                    I’m experienced in bringing technologies like IoT and NFC into mobile apps, ensuring everything is reliable. Let’s
+                    make your app not just functional but a joy to use!
+                </p>
+                <div style="margin-top: 30px;">
+                    <a class="btn" href="assets/pdf/swair-cv.pdf" download="swair-cv-mobile-app-developer.pdf">Download CV</a>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h3>05+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-box">
+                    <h3>10+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-box">
+                    <h3>05+</h3>
+                    <p>Projects Enhanced</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!--==================== SKILLS ====================-->
-            <section class="skills section" id="skills">
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <i class="fab fa-react"></i>
+                <h3>React Native</h3>
+                <p>Building modern cross-platform apps with React Native</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-js-square"></i>
+                <h3>JavaScript</h3>
+                <p>Crafting interactive features with Typescript & JavaScript</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h3>UI/UX Design</h3>
+                <p>Crafting engaging interfaces with animations, sound feedback, and modern design for an immersive user experience.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-plug"></i>
+                <h3>IoT</h3>
+                <p>Working with Internet of Things devices and solutions</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-signal"></i>
+                <h3>NFC</h3>
+                <p>Implementing NFC technology for seamless interactions</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-aws"></i>
+                <h3>Cloud Integration</h3>
+                <p>Deploying code and managing user login using AWS Amplify for seamless cloud-based app solutions.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-credit-card"></i>
+                <h3>Payment Gateways</h3>
+                <p>Integrating Swish and Nets for seamless transactions</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-server"></i>
+                <h3>API Consumption</h3>
+                <p>Consuming RESTful APIs and handling data with Fetch and Axios for smooth, real-time app interactions.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-cogs"></i>
+                <h3>Native Modules</h3>
+                <p>Integrating native modules with React Native for enhanced functionality</p>
+            </div>
+        </div>
+    </section>
+    <!-- portfolio  -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="./assets/img/project-0-100.png" alt="0-100" />
+                    <p>A fun trivia game for the whole family, featuring <strong>in-app purchases via Apple</strong> for premium content,
+                        designed to bring hours of entertainment and challenge in a simple, engaging format.</p>
+                    <a href="https://apps.apple.com/gb/app/0-100/id1668152516" target="_blank" class="btn-app">
+                        <i class="fab fa-apple"></i>Check it out on the App Store
+                        </a>
+                        </div>
+                        <div class="portfolio-item">
+                    <img src="./assets/img/project-healness.png" alt="Healness and Co" />
+                    <p>A mobile massage service offering a combination of techniques to relieve muscle tension, reduce stress, and boost
+                        overall well-being. Book a session via <strong>Bank ID</strong> and enjoy a personalized experience. <strong>Payment
+                            via card or Swish.</strong></p>
+                    <a href="https://apps.apple.com/se/app/healness-co/id1498189455?l=en-GB" target="_blank" class="btn-app">
+                        <i class="fab fa-apple"></i>Check it out on the App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.healness.app&hl=ln" target="_blank" class="btn-app">
+                            <i class="fab fa-google"></i>Check it out on the Play Store
+                        </a>
+                        </div>
+                        <div class="portfolio-item">
+                    <img src="./assets/img/project-gstar.png" alt="GSTAR" />
+                    <p>An app developed for CASS (Center for Aerospace & Security Studies), an independent think tank of Pakistan.</p>
+                    <a href="https://apps.apple.com/sa/app/gstar-2020/id1462259292" target="_blank" class="btn-app">
+                        <i class="fab fa-apple"></i>Check it out on the App Store
+                        </a>
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="./assets/img/project-ngage.png" alt="nGAGE" />
+                            <p>nGAGE @ Work revolutionizes employee engagement by enabling continuous feedback. With a focus on real-time
+                                recognition, team development, and performance reviews, the app empowers employees to receive and give feedback
+                                on the go.</p>
+                            <a href="https://apps.apple.com/pk/app/ngage-work/id1668799332" target="_blank" class="btn-app">
+                                <i class="fab fa-apple"></i>Check it out on the App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.ngageatwork.ngage&pli=1" target="_blank" class="btn-app">
+                                <i class="fab fa-google"></i>Check it out on the Play Store
+                            </a>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="./assets/img/project-stegvis.png" alt="Stegvis" />
+                            <p>Stegvis is a food diary designed to support individuals in treatment for eating disorders. It simplifies meal
+                                tracking and allows users to set reminders, helping them establish structure in their eating habits. </p>
+                            <a href="https://apps.apple.com/us/app/id979588769" target="_blank" class="btn-app">
+                                <i class="fab fa-apple"></i>Check it out on the App Store
+                            </a>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="./assets/img/project-slanka.png" alt="Slanka" />
+                            <p>Slanka helps users track their lifestyle habits and stay committed to their weight loss goals. The app offers a
+                                range of tools, including tips, recipes, videos, and motivational content, all designed to support clients in
+                                their journey. </p>
+                            <a href="https://apps.apple.com/us/app/id979588769" target="_blank" class="btn-app">
+                                <i class="fab fa-apple"></i>Check it out on the App Store
+                            </a>
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <!-- Floating Scroll Indicators -->
+                        <div class="portfolio-scroll-indicator-left">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+        <div class="portfolio-scroll-indicator">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+        </section>
 
-            </section>
+        <script>
+            const portfolioContainer = document.querySelector('.portfolio-container');
+            const scrollInterval = 2000; // Time interval for scrolling (in milliseconds)
+            const scrollStep = 300; // Number of pixels to scroll at a time
 
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section">
+            function autoScroll() {
+                const maxScrollLeft = portfolioContainer.scrollWidth - portfolioContainer.clientWidth;
 
-            </section>
+                if (portfolioContainer.scrollLeft >= maxScrollLeft) {
+                    // If we reached the end, scroll back to the start
+                    portfolioContainer.scrollLeft = 0;
+                } else {
+                    // Scroll by the defined step
+                    portfolioContainer.scrollLeft += scrollStep;
+                }
+            }
 
-            <!--==================== SERVICES ====================-->
-            <section class="services section" id="services">
-                
-            </section>
-
-            <!--==================== PORTFOLIO ====================-->
-            <section class="portfolio section" id="portfolio">
-                
-            </section>
-
-            <!--==================== PROJECT IN MIND ====================-->
-            <section class="project section">
-
-            </section>
-
-            <!--==================== TESTIMONIAL ====================-->
-            <section class="testimonial section">
-                
-            </section>
-
-            <!--==================== CONTACT ME ====================-->
-            <section class="contact section" id="contact">
-
-            </section>
-        </main>
-
-        <!--==================== FOOTER ====================-->
-        <footer class="footer">
-         
-        </footer>
-        
-        <!--==================== SCROLL TOP ====================-->
-        
-
-        <!--==================== SWIPER JS ====================-->
-        <script src=""></script>
-
-        <!--==================== MAIN JS ====================-->
-        <script src=""></script>
+            // Set an interval to automatically scroll
+            setInterval(autoScroll, scrollInterval);
+        </script>
+<!-- Education Section -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="education-container">
+        <div class="education-node">
+            <div class="node-title">
+                <h3>PGD in Project Management</h3>
+                <p id="college-lbl"><strong>London College of Professional Studies</strong> | 2022 - 2023</p>
+            </div>
+            <div class="node-details">
+                <p>Specialized in project planning, resource allocation, and delivering results-driven solutions for
+                    complex mobile and tech projects.</p>
+            </div>
+        </div>
+        <div class="education-node">
+            <div class="node-title">
+                <h3>Bachelor's in Computer Sciences</h3>
+                <p id="college-lbl"><strong>PMAS-BIIT</strong> | 2015 - 2019</p>
+            </div>
+            <div class="node-details">
+                <p>Gained a strong foundation in software development, algorithm design, and IT infrastructure, with a
+                    focus on real-world problem-solving.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- achievements section -->
+<section id="achievements">
+    <h2>Achievements</h2>
+    <div class="achievements-container">
+        <div class="achievement">
+            <h3>Toastmasters International</h3>
+            <p>Served two terms as the <strong>President</strong> of Toastmasters Club (Rebel Speakers), leading
+                members in public speaking, leadership development, and communication skills.</p>
+        </div>
+        <div class="achievement">
+            <h3>Agile Practitioner</h3>
+            <p>Applied Agile principles to deliver collaborative and high-quality software solutions.</p>
+        </div>
+        <div class="achievement">
+            <h3>Mentorship</h3>
+            <p>Delivered engaging sessions on software development in schools and universities, inspiring young talent.
+            </p>
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="contact-text">I’d love to hear from you! Whether it’s for a project, collaboration, or just a
+            conversation, reach out anytime!</p>
+    
+        <div class="contact-icons">
+            <a href="mailto:swairarshad1@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/swair-arshad-51b43718b/" target="_blank" class="contact-link">
+                <i class="fab fa-linkedin"></i>
+                Connect on LinkedIn
+            </a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Swair. All Rights Reserved.</p>
+    </footer>
+    <script src="./assets/js/main.js"></script>
     </body>
+
 </html>
