@@ -8,23 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/animations.css">
 
 
     </head>
 
 <body>
     <!-- Home Section -->
-    <section id="home">
-        <div class="intro-text">
+    <section id="home" class="animated-bg">
+        <div class="intro-text" data-aos="fade-right">
             <h1>Hello, I'm Swair</h1>
-            <p>A React Native developer with over 5 years of experience building high-quality cross-platform apps.</p>
+            <p class="typewriter">Problem-solving, Solution driven, Innovative thinker, Agile practitioner</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/swair-arshad-51b43718b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/swairAQ"><i class="fab fa-github" target="_blank"></i></a>
-                <a href="https://medium.com/@swairaq"><i class="fab fa-medium" target="_blank"></i></a>
+                <a href="https://www.linkedin.com/in/swair-arshad-51b43718b/" target="_blank" class="bounce-hover">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/swairAQ" class="bounce-hover" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://medium.com/@swairaq" class="bounce-hover" target="_blank">
+                    <i class="fab fa-medium"></i>
+                </a>
             </div>
         </div>
-        <img src="./assets/img/profile.jpeg" alt="Profile Picture" class="profile-img">
+        <!-- <div class="floating-images">
+                    <img src="./assets/img/profile1.jpeg" alt="Working" class="float-img float-1" data-aos="fade-down">
+                    <img src="./assets/img/work-2.jpg" alt="Coding" class="float-img float-2" data-aos="fade-left">
+                    <img src="./assets/img/work-3.jpg" alt="Meeting" class="float-img float-3" data-aos="fade-up">
+                </div> -->
+        <img src="./assets/img/profile.jpeg" alt="Profile Picture" class="profile-img" data-aos="fade-left">
     </section>
 
     <!-- About Me Section -->
@@ -32,13 +45,13 @@
         <h2>About Me</h2>
         <div class="about-grid">
             <div class="about-content">
-                <p style="text-align: justify;">I craft mobile apps that don’t just look good—they feel right. With a
+                <p style="text-align: justify;">I craft mobile apps that don't just look good—they feel right. With a
                     deep
                     understanding of React
                     Native, iOS development, and a passion for seamless user experiences, I bring your ideas to life through interactive
                     animations, haptic and sound feedback, and more.
                     <br><br>
-                    I’m experienced in bringing technologies like IoT and NFC into mobile apps, ensuring everything is reliable. Let’s
+                    I'm experienced in bringing technologies like IoT and NFC into mobile apps, ensuring everything is reliable. Let's
                     make your app not just functional but a joy to use!
                 </p>
                 <div style="margin-top: 30px;">
@@ -66,48 +79,66 @@
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-container">
-            <div class="skill">
-                <i class="fab fa-react"></i>
+            <div class="skill" data-aos="flip-left">
+                <div class="skill-icon">
+                    <i class="fab fa-react"></i>
+                </div>
                 <h3>React Native</h3>
                 <p>Building modern cross-platform apps with React Native</p>
             </div>
-            <div class="skill">
-                <i class="fab fa-js-square"></i>
+            <div class="skill" data-aos="flip-right">
+                <div class="skill-icon">
+                    <i class="fab fa-js-square"></i>
+                </div>
                 <h3>JavaScript</h3>
                 <p>Crafting interactive features with Typescript & JavaScript</p>
             </div>
-            <div class="skill">
-                <i class="fas fa-code"></i>
+            <div class="skill" data-aos="flip-up">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
                 <h3>UI/UX Design</h3>
                 <p>Crafting engaging interfaces with animations, sound feedback, and modern design for an immersive user experience.</p>
             </div>
-            <div class="skill">
-                <i class="fas fa-plug"></i>
+            <div class="skill" data-aos="flip-down">
+                <div class="skill-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
                 <h3>IoT</h3>
                 <p>Working with Internet of Things devices and solutions</p>
             </div>
-            <div class="skill">
-                <i class="fas fa-signal"></i>
+            <div class="skill" data-aos="flip-left">
+                <div class="skill-icon">
+                    <i class="fas fa-signal"></i>
+                </div>
                 <h3>NFC</h3>
                 <p>Implementing NFC technology for seamless interactions</p>
             </div>
-            <div class="skill">
-                <i class="fab fa-aws"></i>
+            <div class="skill" data-aos="flip-right">
+                <div class="skill-icon">
+                    <i class="fab fa-aws"></i>
+                </div>
                 <h3>Cloud Integration</h3>
                 <p>Deploying code and managing user login using AWS Amplify for seamless cloud-based app solutions.</p>
             </div>
-            <div class="skill">
-                <i class="fas fa-credit-card"></i>
+            <div class="skill" data-aos="flip-up">
+                <div class="skill-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
                 <h3>Payment Gateways</h3>
                 <p>Integrating Swish and Nets for seamless transactions</p>
             </div>
-            <div class="skill">
-                <i class="fas fa-server"></i>
+            <div class="skill" data-aos="flip-down">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
                 <h3>API Consumption</h3>
                 <p>Consuming RESTful APIs and handling data with Fetch and Axios for smooth, real-time app interactions.</p>
             </div>
-            <div class="skill">
-                <i class="fas fa-cogs"></i>
+            <div class="skill" data-aos="flip-left">
+                <div class="skill-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
                 <h3>Native Modules</h3>
                 <p>Integrating native modules with React Native for enhanced functionality</p>
             </div>
@@ -118,7 +149,7 @@
         <h2>Portfolio</h2>
         <div class="portfolio-container">
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-aos="zoom-in">
                     <img src="./assets/img/project-0-100.png" alt="0-100" />
                     <p>A fun trivia game for the whole family, featuring <strong>in-app purchases via Apple</strong> for premium content,
                         designed to bring hours of entertainment and challenge in a simple, engaging format.</p>
@@ -126,7 +157,7 @@
                         <i class="fab fa-apple"></i>Check it out on the App Store
                         </a>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-aos="zoom-in">
                     <img src="./assets/img/project-healness.png" alt="Healness and Co" />
                     <p>A mobile massage service offering a combination of techniques to relieve muscle tension, reduce stress, and boost
                         overall well-being. Book a session via <strong>Bank ID</strong> and enjoy a personalized experience. <strong>Payment
@@ -138,14 +169,14 @@
                             <i class="fab fa-google"></i>Check it out on the Play Store
                         </a>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-aos="zoom-in">
                     <img src="./assets/img/project-gstar.png" alt="GSTAR" />
                     <p>An app developed for CASS (Center for Aerospace & Security Studies), an independent think tank of Pakistan.</p>
                     <a href="https://apps.apple.com/sa/app/gstar-2020/id1462259292" target="_blank" class="btn-app">
                         <i class="fab fa-apple"></i>Check it out on the App Store
                         </a>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-aos="zoom-in">
                             <img src="./assets/img/project-ngage.png" alt="nGAGE" />
                             <p>nGAGE @ Work revolutionizes employee engagement by enabling continuous feedback. With a focus on real-time
                                 recognition, team development, and performance reviews, the app empowers employees to receive and give feedback
@@ -158,7 +189,7 @@
                             </a>
                         </div>
                         
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-aos="zoom-in">
                             <img src="./assets/img/project-stegvis.png" alt="Stegvis" />
                             <p>Stegvis is a food diary designed to support individuals in treatment for eating disorders. It simplifies meal
                                 tracking and allows users to set reminders, helping them establish structure in their eating habits. </p>
@@ -167,7 +198,7 @@
                             </a>
                         </div>
                         
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-aos="zoom-in">
                             <img src="./assets/img/project-slanka.png" alt="Slanka" />
                             <p>Slanka helps users track their lifestyle habits and stay committed to their weight loss goals. The app offers a
                                 range of tools, including tips, recipes, videos, and motivational content, all designed to support clients in
@@ -256,18 +287,19 @@
 </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <p class="contact-text">I’d love to hear from you! Whether it’s for a project, collaboration, or just a
-            conversation, reach out anytime!</p>
+        <h2 class="section-title">Let's Solve It Together!</h2>
+        <p class="contact-text">I'd love to hear from you! Whether it's for a project, collaboration, or just a
+            conversation.</p>
     
         <div class="contact-icons">
+            <p>Hit me up @</p>
             <a href="mailto:swairarshad1@gmail.com" class="contact-link">
                 <i class="fas fa-envelope"></i>
-                Email Me
+            
             </a>
             <a href="https://www.linkedin.com/in/swair-arshad-51b43718b/" target="_blank" class="contact-link">
                 <i class="fab fa-linkedin"></i>
-                Connect on LinkedIn
+            
             </a>
         </div>
     </section>
@@ -276,6 +308,14 @@
         <p>&copy; 2025 Swair. All Rights Reserved.</p>
     </footer>
     <script src="./assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
     </body>
 
 </html>
