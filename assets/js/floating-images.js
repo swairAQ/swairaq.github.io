@@ -1,39 +1,43 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all floating images
-    const floatingImages = document.querySelectorAll('.float-img');
+// Cache DOM elements
+const floatingImages = document.querySelectorAll('.float-img');
+let activeImage = null;
+
+// Optimized click handler
+function handleImageClick(img) {
+    if (activeImage === img) {
+        img.classList.remove('expanded');
+        activeImage = null;
+        return;
+    }
     
-    // Add click event listener to each image
+    if (activeImage) {
+        activeImage.classList.remove('expanded');
+    }
+    
+    img.classList.add('expanded');
+    activeImage = img;
+}
+
+// Initialize event listeners
+function initFloatingImages() {
     floatingImages.forEach(img => {
-        img.addEventListener('click', function() {
-            // Check if this image is already expanded
-            const isExpanded = this.classList.contains('expanded');
-            
-            // First, collapse all images
-            floatingImages.forEach(otherImg => {
-                otherImg.classList.remove('expanded');
-            });
-            
-            // If the clicked image wasn't expanded, expand it
-            if (!isExpanded) {
-                this.classList.add('expanded');
-                
-                // Set a timeout to automatically collapse the image after 3 seconds
-                setTimeout(() => {
-                    this.classList.remove('expanded');
-                    // Add the viewed class after collapsing
-                    this.classList.add('viewed');
-                }, 3000);
-            }
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            handleImageClick(this);
         });
     });
-    
-    // Add click event listener to document to collapse images when clicking outside
-    document.addEventListener('click', function(event) {
-        // Check if the click was outside any floating image
-        if (!event.target.classList.contains('float-img')) {
-            floatingImages.forEach(img => {
-                img.classList.remove('expanded');
-            });
+
+    document.addEventListener('click', function() {
+        if (activeImage) {
+            activeImage.classList.remove('expanded');
+            activeImage = null;
         }
     });
-}); 
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingImages);
+} else {
+    initFloatingImages();
+} 

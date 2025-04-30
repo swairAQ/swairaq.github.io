@@ -249,23 +249,29 @@
 
         <script>
             const portfolioContainer = document.querySelector('.portfolio-container');
-            const scrollInterval = 2000; // Time interval for scrolling (in milliseconds)
-            const scrollStep = 300; // Number of pixels to scroll at a time
+                                    const scrollInterval = 3000; // Increased interval for better performance
+                                    const scrollStep = 400; // Increased step for smoother scrolling
+                                    let scrollTimeout;
 
             function autoScroll() {
                 const maxScrollLeft = portfolioContainer.scrollWidth - portfolioContainer.clientWidth;
 
                 if (portfolioContainer.scrollLeft >= maxScrollLeft) {
-                    // If we reached the end, scroll back to the start
-                    portfolioContainer.scrollLeft = 0;
+                    portfolioContainer.scrollTo({ left: 0, behavior: 'smooth' });
                 } else {
-                    // Scroll by the defined step
-                    portfolioContainer.scrollLeft += scrollStep;
+                    portfolioContainer.scrollBy({ left: scrollStep, behavior: 'smooth' });
                 }
+
+                scrollTimeout = setTimeout(autoScroll, scrollInterval);
             }
 
-            // Set an interval to automatically scroll
-            setInterval(autoScroll, scrollInterval);
+                                    // Start auto-scroll
+                                    autoScroll();
+
+                                    // Clean up on page unload
+                                    window.addEventListener('unload', function () {
+                                        clearTimeout(scrollTimeout);
+                                    });
         </script>
 <!-- Education Section -->
 <section id="education">
