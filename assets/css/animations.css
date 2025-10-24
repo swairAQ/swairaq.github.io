@@ -142,21 +142,25 @@
 
 .float-1 {
     right: 20px;
+    animation: float1 6s ease-in-out infinite;
 }
 
 .float-2 {
     top: 30px;
     right: -30px;
+    animation: float2 8s ease-in-out infinite;
 }
 
 .float-3 {
     top: 70px;
     right: 20px;
+    animation: float3 7s ease-in-out infinite;
 }
 
 .float-4 {
     top: 96px;
     right: -35px;
+    animation: float1 9s ease-in-out infinite;
 }
 
 @keyframes float1 {
@@ -221,9 +225,29 @@
             transform: none;
         }
     
-        [data-aos] {
+                /* Disable complex animations on mobile for better performance */
+                .flip-left,
+                .flip-right,
+                .flip-up,
+                .flip-down {
             opacity: 1 !important;
             transform: none !important;
+            animation: none !important;
+            }
+            
+            .zoom-in {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+            
+            .fade-right,
+            .fade-left,
+            .fade-up,
+            .fade-down {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
         }
     
         .typewriter {
@@ -467,5 +491,218 @@ footer .version {
     font-size: 0.8rem;
     color: #999;
     font-family: monospace;
+}
 
+/* AOS Replacement Animations */
+.fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-down {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.flip-left {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+    animation: flipInLeft 1s ease-out forwards;
+}
+
+.flip-right {
+    opacity: 0;
+    transform: perspective(400px) rotateY(-90deg);
+    animation: flipInRight 1s ease-out forwards;
+}
+
+.flip-up {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+    animation: flipInUp 1s ease-out forwards;
+}
+
+.flip-down {
+    opacity: 0;
+    transform: perspective(400px) rotateX(-90deg);
+    animation: flipInDown 1s ease-out forwards;
+}
+
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: zoomIn 1s ease-out forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flipInLeft {
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0deg);
+    }
+}
+
+@keyframes flipInRight {
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0deg);
+    }
+}
+
+@keyframes flipInUp {
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0deg);
+    }
+}
+
+@keyframes flipInDown {
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0deg);
+    }
+}
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    
+}
+
+/* Staggered animations for better performance */
+.intro-text {
+    animation-delay: 0.2s;
+}
+
+.float-1 {
+    animation-delay: 0.4s;
+}
+
+.float-2 {
+    animation-delay: 0.6s;
+}
+
+.float-3 {
+    animation-delay: 0.8s;
+}
+
+.float-4 {
+    animation-delay: 1s;
+}
+
+.profile-img {
+    animation-delay: 1.2s;
+}
+
+/* Skills staggered animation */
+.skill:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skill:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skill:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skill:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.skill:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.skill:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.skill:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.skill:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.skill:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+/* Portfolio staggered animation */
+.portfolio-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.portfolio-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.portfolio-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.portfolio-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.portfolio-item:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.portfolio-item:nth-child(8) {
+    animation-delay: 0.8s;
 }
