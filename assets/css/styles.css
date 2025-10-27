@@ -40,13 +40,19 @@ a:hover {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-app:hover {
+.btn-app:hover:not(:disabled) {
   background-color: #5146c5;
   /* Darker purple */
   transform: translateY(-2px);
   /* Slightly lifted effect */
 }
 
+.btn-app:disabled {
+  background-color: #999;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
 .btn-app i {
   font-size: 1.25rem;
   /* Larger icon */
