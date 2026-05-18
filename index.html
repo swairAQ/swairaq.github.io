@@ -16,12 +16,12 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Swair Arshad — Senior React Native Developer</title>
-  
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet" />
-  
+
     <style>
       /* ─── Reset ────────────────────────────────────────── */
       *,
@@ -31,11 +31,11 @@
         margin: 0;
         padding: 0;
       }
-  
+
       html {
         scroll-behavior: smooth;
       }
-  
+
       :root {
         --accent: #0ea5e9;
         --accent-light: #38bdf8;
@@ -54,7 +54,7 @@
         --radius: 14px;
         --radius-lg: 20px;
       }
-  
+
       body {
         background: var(--bg);
         color: var(--text);
@@ -65,35 +65,35 @@
         line-height: 1.6;
         overflow-x: hidden;
       }
-  
+
       ::-webkit-scrollbar {
         width: 5px;
       }
-  
+
       ::-webkit-scrollbar-track {
         background: var(--bg);
       }
-  
+
       ::-webkit-scrollbar-thumb {
         background: var(--accent);
         border-radius: 99px;
       }
-  
+
       ::selection {
         background: var(--accent);
         color: #fff;
       }
-  
+
       .container {
         max-width: 1120px;
         margin: 0 auto;
         padding: 0 24px;
       }
-  
+
       .section {
         padding: 100px 0;
       }
-  
+
       .tag {
         display: inline-flex;
         align-items: center;
@@ -107,7 +107,7 @@
         white-space: nowrap;
         letter-spacing: 0.02em;
       }
-  
+
       .section-label {
         font-size: 11px;
         font-weight: 700;
@@ -116,26 +116,28 @@
         color: var(--accent);
         margin-bottom: 10px;
       }
-  
+
       .section-title {
         font-size: clamp(26px, 4.5vw, 40px);
         font-weight: 800;
         letter-spacing: -0.025em;
         line-height: 1.15;
       }
-  
+
       .section-title span {
         color: var(--accent-light);
       }
-  
+
       .divider {
         height: 1px;
-        background: linear-gradient(to right,
-            transparent,
-            var(--border),
-            transparent);
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--border),
+          transparent
+        );
       }
-  
+
       /* Noise overlay */
       body::before {
         content: "";
@@ -146,7 +148,7 @@
         pointer-events: none;
         z-index: 0;
       }
-  
+
       /* ─── NAV ──────────────────────────────────────────── */
       #nav {
         position: fixed;
@@ -157,7 +159,7 @@
         padding: 18px 0;
         transition: all 0.35s ease;
       }
-  
+
       #nav.scrolled {
         background: rgba(6, 12, 20, 0.82);
         backdrop-filter: blur(24px) saturate(160%);
@@ -165,14 +167,14 @@
         border-bottom: 1px solid var(--border);
         padding: 12px 0;
       }
-  
+
       .nav-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
       }
-  
+
       .nav-logo {
         font-size: 19px;
         font-weight: 800;
@@ -181,18 +183,18 @@
         text-decoration: none;
         flex-shrink: 0;
       }
-  
+
       .nav-logo span {
         color: var(--accent-light);
       }
-  
+
       .nav-links {
         display: flex;
         align-items: center;
         gap: 2px;
         list-style: none;
       }
-  
+
       .nav-links a {
         position: relative;
         padding: 7px 13px;
@@ -203,13 +205,13 @@
         border-radius: 8px;
         transition: all 0.2s ease;
       }
-  
+
       .nav-links a:hover,
       .nav-links a.active {
         color: var(--text);
         background: rgba(255, 255, 255, 0.055);
       }
-  
+
       .nav-links a.active::after {
         content: "";
         position: absolute;
@@ -221,14 +223,14 @@
         border-radius: 50%;
         background: var(--accent-light);
       }
-  
+
       .nav-actions {
         display: flex;
         align-items: center;
         gap: 8px;
         flex-shrink: 0;
       }
-  
+
       .nav-icon-btn {
         display: flex;
         align-items: center;
@@ -241,13 +243,13 @@
         text-decoration: none;
         transition: all 0.2s ease;
       }
-  
+
       .nav-icon-btn:hover {
         border-color: var(--accent);
         color: var(--accent-light);
         background: rgba(14, 165, 233, 0.1);
       }
-  
+
       .nav-dl-btn {
         display: flex;
         align-items: center;
@@ -262,13 +264,13 @@
         text-decoration: none;
         transition: all 0.2s ease;
       }
-  
+
       .nav-dl-btn:hover {
         border-color: var(--accent);
         color: var(--accent-light);
         background: rgba(14, 165, 233, 0.08);
       }
-  
+
       .nav-cta-btn {
         display: flex;
         align-items: center;
@@ -282,13 +284,13 @@
         text-decoration: none;
         transition: all 0.2s ease;
       }
-  
+
       .nav-cta-btn:hover {
         background: var(--accent-light);
         transform: translateY(-1px);
         box-shadow: 0 4px 20px var(--accent-glow);
       }
-  
+
       .nav-toggle {
         display: none;
         flex-direction: column;
@@ -298,7 +300,7 @@
         background: none;
         border: none;
       }
-  
+
       .nav-toggle span {
         display: block;
         width: 22px;
@@ -307,19 +309,19 @@
         border-radius: 2px;
         transition: all 0.3s ease;
       }
-  
+
       .nav-toggle.open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
       }
-  
+
       .nav-toggle.open span:nth-child(2) {
         opacity: 0;
       }
-  
+
       .nav-toggle.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
       }
-  
+
       .nav-mobile {
         display: none;
         position: fixed;
@@ -332,11 +334,11 @@
         flex-direction: column;
         gap: 4px;
       }
-  
+
       .nav-mobile.open {
         display: flex;
       }
-  
+
       .nav-mobile a {
         font-size: 22px;
         font-weight: 700;
@@ -346,17 +348,17 @@
         border-bottom: 1px solid var(--border);
         transition: color 0.2s;
       }
-  
+
       .nav-mobile a:hover {
         color: var(--text);
       }
-  
+
       .nav-mobile .mobile-dl {
         margin-top: 24px;
         display: flex;
         gap: 12px;
       }
-  
+
       /* ─── HERO ─────────────────────────────────────────── */
       #home {
         min-height: 100vh;
@@ -366,7 +368,7 @@
         position: relative;
         overflow: hidden;
       }
-  
+
       .blob {
         position: absolute;
         border-radius: 50%;
@@ -374,7 +376,7 @@
         opacity: 0.12;
         pointer-events: none;
       }
-  
+
       .blob-1 {
         width: 700px;
         height: 700px;
@@ -383,7 +385,7 @@
         right: -250px;
         animation: blobFloat 9s ease-in-out infinite;
       }
-  
+
       .blob-2 {
         width: 500px;
         height: 500px;
@@ -392,19 +394,18 @@
         left: -150px;
         animation: blobFloat 11s ease-in-out infinite reverse;
       }
-  
+
       @keyframes blobFloat {
-  
         0%,
         100% {
           transform: translate(0, 0) scale(1);
         }
-  
+
         50% {
           transform: translate(25px, -25px) scale(1.04);
         }
       }
-  
+
       /* Grid lines decoration */
       #home::after {
         content: "";
@@ -416,7 +417,7 @@
         background-size: 60px 60px;
         pointer-events: none;
       }
-  
+
       .hero-inner {
         display: grid;
         grid-template-columns: 1fr auto;
@@ -425,7 +426,7 @@
         position: relative;
         z-index: 1;
       }
-  
+
       .hero-badge {
         display: inline-flex;
         align-items: center;
@@ -439,7 +440,7 @@
         color: var(--accent-light);
         margin-bottom: 22px;
       }
-  
+
       .hero-badge-dot {
         width: 7px;
         height: 7px;
@@ -447,19 +448,18 @@
         border-radius: 50%;
         animation: pulse 2.2s infinite;
       }
-  
+
       @keyframes pulse {
-  
         0%,
         100% {
           box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5);
         }
-  
+
         50% {
           box-shadow: 0 0 0 7px rgba(56, 189, 248, 0);
         }
       }
-  
+
       .hero-title {
         font-size: clamp(34px, 5.5vw, 64px);
         font-weight: 900;
@@ -467,19 +467,19 @@
         line-height: 1.07;
         margin-bottom: 22px;
       }
-  
+
       .hero-title .line-1 {
         color: var(--text);
       }
-  
+
       .hero-title .line-2 {
         color: var(--accent-light);
       }
-  
+
       .hero-title .line-3 {
         color: var(--text);
       }
-  
+
       .hero-subtitle {
         font-size: clamp(14.5px, 1.8vw, 17px);
         color: var(--text-muted);
@@ -487,14 +487,14 @@
         max-width: 520px;
         margin-bottom: 36px;
       }
-  
+
       .hero-actions {
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
         margin-bottom: 36px;
       }
-  
+
       .btn {
         display: inline-flex;
         align-items: center;
@@ -509,47 +509,47 @@
         border: none;
         font-family: inherit;
       }
-  
+
       .btn-primary {
         background: var(--accent);
         color: #fff;
       }
-  
+
       .btn-primary:hover {
         background: var(--accent-light);
         transform: translateY(-2px);
         box-shadow: 0 10px 36px var(--accent-glow);
       }
-  
+
       .btn-outline {
         background: transparent;
         color: var(--text);
         border: 1.5px solid var(--border);
       }
-  
+
       .btn-outline:hover {
         border-color: var(--accent-light);
         color: var(--accent-light);
         transform: translateY(-2px);
       }
-  
+
       .btn-ghost {
         background: rgba(14, 165, 233, 0.08);
         color: var(--accent-light);
         border: 1.5px solid rgba(14, 165, 233, 0.2);
       }
-  
+
       .btn-ghost:hover {
         background: rgba(14, 165, 233, 0.15);
         transform: translateY(-2px);
       }
-  
+
       .hero-socials {
         display: flex;
         gap: 10px;
         align-items: center;
       }
-  
+
       .hero-socials a {
         display: flex;
         align-items: center;
@@ -562,41 +562,43 @@
         text-decoration: none;
         transition: all 0.25s ease;
       }
-  
+
       .hero-socials a:hover {
         border-color: var(--accent);
         color: var(--accent-light);
         background: rgba(14, 165, 233, 0.08);
         transform: translateY(-2px);
       }
-  
+
       /* Profile ring */
       .hero-img-wrap {
         position: relative;
         flex-shrink: 0;
       }
-  
+
       .hero-img-wrap::before {
         content: "";
         position: absolute;
         inset: -3px;
         border-radius: 50%;
-        background: conic-gradient(from 0deg,
-            var(--accent),
-            transparent 40%,
-            var(--accent-light) 60%,
-            transparent,
-            var(--accent));
+        background: conic-gradient(
+          from 0deg,
+          var(--accent),
+          transparent 40%,
+          var(--accent-light) 60%,
+          transparent,
+          var(--accent)
+        );
         animation: spin 7s linear infinite;
         z-index: -1;
       }
-  
+
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
-  
+
       .hero-img {
         width: 230px;
         height: 230px;
@@ -605,14 +607,14 @@
         display: block;
         border: 5px solid var(--bg);
       }
-  
+
       /* Photo strip */
       .photo-strip {
         display: flex;
         gap: 8px;
         margin-top: 28px;
       }
-  
+
       .photo-thumb {
         width: 56px;
         height: 56px;
@@ -622,12 +624,12 @@
         transition: all 0.25s ease;
         cursor: pointer;
       }
-  
+
       .photo-thumb:hover {
         border-color: var(--accent);
         transform: scale(1.1) translateY(-2px);
       }
-  
+
       /* ─── MARQUEE ───────────────────────────────────────── */
       #marquee-section {
         padding: 28px 0;
@@ -637,7 +639,7 @@
         overflow: hidden;
         position: relative;
       }
-  
+
       #marquee-section::before,
       #marquee-section::after {
         content: "";
@@ -648,27 +650,27 @@
         z-index: 2;
         pointer-events: none;
       }
-  
+
       #marquee-section::before {
         left: 0;
         background: linear-gradient(to right, var(--bg-2), transparent);
       }
-  
+
       #marquee-section::after {
         right: 0;
         background: linear-gradient(to left, var(--bg-2), transparent);
       }
-  
+
       .marquee-track {
         display: flex;
         animation: marquee 32s linear infinite;
         white-space: nowrap;
       }
-  
+
       .marquee-track:hover {
         animation-play-state: paused;
       }
-  
+
       .marquee-item {
         display: inline-flex;
         align-items: center;
@@ -680,11 +682,11 @@
         letter-spacing: 0.03em;
         transition: color 0.2s;
       }
-  
+
       .marquee-item:hover {
         color: var(--accent-light);
       }
-  
+
       .marquee-dot {
         width: 4px;
         height: 4px;
@@ -692,17 +694,17 @@
         background: var(--accent);
         flex-shrink: 0;
       }
-  
+
       @keyframes marquee {
         0% {
           transform: translateX(0);
         }
-  
+
         100% {
           transform: translateX(-50%);
         }
       }
-  
+
       /* ─── STATS BENTO ──────────────────────────────────── */
       .stats-bento {
         display: grid;
@@ -711,7 +713,7 @@
         gap: 14px;
         margin-top: 44px;
       }
-  
+
       .stat-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -721,18 +723,20 @@
         overflow: hidden;
         transition: all 0.3s ease;
       }
-  
+
       .stat-card::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at 40% 0%,
-            rgba(14, 165, 233, 0.07) 0%,
-            transparent 60%);
+        background: radial-gradient(
+          circle at 40% 0%,
+          rgba(14, 165, 233, 0.07) 0%,
+          transparent 60%
+        );
         opacity: 0;
         transition: opacity 0.3s;
       }
-  
+
       .stat-card:hover {
         border-color: var(--border-hover);
         transform: translateY(-4px) scale(1.01);
@@ -741,20 +745,20 @@
           0 0 30px var(--accent-glow);
         background: var(--card-hover);
       }
-  
+
       .stat-card:hover::before {
         opacity: 1;
       }
-  
+
       .stat-card.wide {
         grid-column: span 2;
       }
-  
+
       .stat-icon {
         font-size: 26px;
         margin-bottom: 14px;
       }
-  
+
       .stat-value {
         font-size: 46px;
         font-weight: 900;
@@ -766,31 +770,31 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-  
+
       .stat-label {
         font-size: 13px;
         color: var(--text-muted);
         font-weight: 500;
       }
-  
+
       .stat-sub {
         font-size: 11px;
         color: var(--text-dim);
         font-weight: 500;
         margin-top: 4px;
       }
-  
+
       /* wide card layout */
       .stat-card.wide {
         grid-column: span 1;
       }
-  
+
       /* ─── TIMELINE ──────────────────────────────────────── */
       .timeline {
         position: relative;
         margin-top: 52px;
       }
-  
+
       .timeline::before {
         content: "";
         position: absolute;
@@ -800,14 +804,14 @@
         width: 2px;
         background: linear-gradient(to bottom, var(--accent), transparent);
       }
-  
+
       .timeline-item {
         display: grid;
         grid-template-columns: 40px 1fr;
         gap: 22px;
         margin-bottom: 36px;
       }
-  
+
       .timeline-dot {
         width: 12px;
         height: 12px;
@@ -818,7 +822,7 @@
         margin-top: 5px;
         justify-self: center;
       }
-  
+
       .timeline-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -826,13 +830,13 @@
         padding: 22px 24px;
         transition: all 0.3s ease;
       }
-  
+
       .timeline-card:hover {
         border-color: var(--border-hover);
         transform: translateX(5px);
         box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
       }
-  
+
       .timeline-header {
         display: flex;
         justify-content: space-between;
@@ -841,12 +845,12 @@
         margin-bottom: 4px;
         flex-wrap: wrap;
       }
-  
+
       .timeline-role {
         font-size: 16px;
         font-weight: 700;
       }
-  
+
       .timeline-period {
         font-size: 11.5px;
         font-weight: 600;
@@ -856,21 +860,21 @@
         border-radius: 99px;
         white-space: nowrap;
       }
-  
+
       .timeline-company {
         font-size: 13px;
         color: var(--accent-light);
         font-weight: 600;
         margin-bottom: 14px;
       }
-  
+
       .timeline-bullets {
         list-style: none;
         display: flex;
         flex-direction: column;
         gap: 7px;
       }
-  
+
       .timeline-bullets li {
         font-size: 13.5px;
         color: var(--text-muted);
@@ -878,7 +882,7 @@
         position: relative;
         line-height: 1.65;
       }
-  
+
       .timeline-bullets li::before {
         content: "▸";
         position: absolute;
@@ -887,7 +891,7 @@
         font-size: 9px;
         top: 4px;
       }
-  
+
       /* ─── PROJECTS ──────────────────────────────────────── */
       /* Featured row — first card wider */
       .projects-featured {
@@ -896,7 +900,7 @@
         gap: 18px;
         margin-top: 48px;
       }
-  
+
       .project-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -906,7 +910,7 @@
         flex-direction: column;
         transition: all 0.32s ease;
       }
-  
+
       .project-card:hover {
         border-color: var(--border-hover);
         transform: translateY(-7px) scale(1.01);
@@ -914,18 +918,18 @@
           0 24px 80px rgba(0, 0, 0, 0.55),
           0 0 50px var(--accent-glow);
       }
-  
+
       .project-img-wrap {
         position: relative;
         overflow: hidden;
         height: 190px;
         background: var(--bg-3);
       }
-  
+
       .project-card.featured-lg .project-img-wrap {
         height: 230px;
       }
-  
+
       .project-img-wrap img {
         width: 100%;
         height: 100%;
@@ -933,19 +937,21 @@
         object-position: top center;
         transition: transform 0.5s ease;
       }
-  
+
       .project-card:hover .project-img-wrap img {
         transform: scale(1.07);
       }
-  
+
       .project-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom,
-            transparent 35%,
-            rgba(6, 12, 20, 0.88));
+        background: linear-gradient(
+          to bottom,
+          transparent 35%,
+          rgba(6, 12, 20, 0.88)
+        );
       }
-  
+
       .project-links-overlay {
         position: absolute;
         top: 10px;
@@ -956,12 +962,12 @@
         transform: translateY(-8px);
         transition: all 0.3s ease;
       }
-  
+
       .project-card:hover .project-links-overlay {
         opacity: 1;
         transform: translateY(0);
       }
-  
+
       .project-link-btn {
         display: flex;
         align-items: center;
@@ -977,12 +983,12 @@
         text-decoration: none;
         transition: all 0.2s;
       }
-  
+
       .project-link-btn:hover {
         background: var(--accent);
         border-color: var(--accent);
       }
-  
+
       .project-body {
         padding: 20px;
         flex: 1;
@@ -990,27 +996,27 @@
         flex-direction: column;
         gap: 9px;
       }
-  
+
       .project-title {
         font-size: 16px;
         font-weight: 700;
         line-height: 1.3;
       }
-  
+
       .project-desc {
         font-size: 12.5px;
         color: var(--text-muted);
         line-height: 1.65;
         flex: 1;
       }
-  
+
       .project-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
         margin-top: 2px;
       }
-  
+
       /* Secondary grid — cards with image thumbnails */
       .projects-secondary {
         display: grid;
@@ -1018,7 +1024,7 @@
         gap: 16px;
         margin-top: 16px;
       }
-  
+
       .project-mini {
         background: var(--card);
         border: 1px solid var(--border);
@@ -1026,20 +1032,20 @@
         overflow: hidden;
         transition: all 0.3s ease;
       }
-  
+
       .project-mini:hover {
         border-color: var(--border-hover);
         transform: translateY(-3px);
         box-shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
       }
-  
+
       .mini-img-wrap {
         height: 200px;
         overflow: hidden;
         background: var(--bg-3);
         position: relative;
       }
-  
+
       .mini-img-wrap img {
         width: 100%;
         height: 100%;
@@ -1047,36 +1053,38 @@
         object-position: top;
         transition: transform 0.4s ease;
       }
-  
+
       .project-mini:hover .mini-img-wrap img {
         transform: scale(1.06);
       }
-  
+
       .mini-img-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom,
-            transparent 40%,
-            rgba(6, 12, 20, 0.8));
+        background: linear-gradient(
+          to bottom,
+          transparent 40%,
+          rgba(6, 12, 20, 0.8)
+        );
       }
-  
+
       .project-mini-body {
         padding: 14px 16px 16px;
       }
-  
+
       .project-mini-title {
         font-size: 14px;
         font-weight: 700;
         margin-bottom: 5px;
       }
-  
+
       .project-mini-desc {
         font-size: 12px;
         color: var(--text-muted);
         line-height: 1.6;
         margin-bottom: 10px;
       }
-  
+
       .mini-footer {
         display: flex;
         align-items: center;
@@ -1084,12 +1092,12 @@
         gap: 8px;
         flex-wrap: wrap;
       }
-  
+
       .mini-links {
         display: flex;
         gap: 6px;
       }
-  
+
       .mini-link {
         display: inline-flex;
         align-items: center;
@@ -1104,12 +1112,12 @@
         background: rgba(14, 165, 233, 0.06);
         transition: all 0.2s;
       }
-  
+
       .mini-link:hover {
         background: rgba(14, 165, 233, 0.15);
         border-color: var(--accent);
       }
-  
+
       /* ─── SKILLS ────────────────────────────────────────── */
       .skills-bento {
         display: grid;
@@ -1117,7 +1125,7 @@
         gap: 12px;
         margin-top: 48px;
       }
-  
+
       .skill-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -1125,14 +1133,14 @@
         padding: 18px;
         transition: all 0.25s ease;
       }
-  
+
       .skill-card:hover {
         border-color: var(--border-hover);
         background: var(--card-hover);
         transform: translateY(-3px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       }
-  
+
       .skill-category {
         font-size: 10.5px;
         font-weight: 800;
@@ -1141,13 +1149,13 @@
         color: var(--accent-light);
         margin-bottom: 10px;
       }
-  
+
       .skill-items {
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
       }
-  
+
       .skill-chip {
         font-size: 11.5px;
         font-weight: 500;
@@ -1158,12 +1166,12 @@
         border: 1px solid rgba(255, 255, 255, 0.04);
         transition: all 0.2s;
       }
-  
+
       .skill-card:hover .skill-chip {
         color: var(--text);
         border-color: rgba(14, 165, 233, 0.15);
       }
-  
+
       /* ─── ACHIEVEMENTS ──────────────────────────────────── */
       .achievements-grid {
         display: grid;
@@ -1171,7 +1179,7 @@
         gap: 14px;
         margin-top: 48px;
       }
-  
+
       .achievement-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -1182,32 +1190,32 @@
         transition: all 0.3s ease;
         align-items: flex-start;
       }
-  
+
       .achievement-card:hover {
         border-color: var(--border-hover);
         transform: translateY(-3px);
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
       }
-  
+
       .achievement-emoji {
         font-size: 28px;
         flex-shrink: 0;
         line-height: 1;
         margin-top: 2px;
       }
-  
+
       .achievement-title {
         font-size: 14px;
         font-weight: 700;
         margin-bottom: 5px;
       }
-  
+
       .achievement-desc {
         font-size: 12.5px;
         color: var(--text-muted);
         line-height: 1.65;
       }
-  
+
       /* ─── EDUCATION ─────────────────────────────────────── */
       .education-grid {
         display: grid;
@@ -1215,7 +1223,7 @@
         gap: 14px;
         margin-top: 48px;
       }
-  
+
       .edu-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -1223,49 +1231,49 @@
         padding: 22px;
         transition: all 0.25s ease;
       }
-  
+
       .edu-card:hover {
         border-color: var(--border-hover);
         transform: translateY(-3px);
       }
-  
+
       .edu-degree {
         font-size: 15px;
         font-weight: 700;
         margin-bottom: 4px;
       }
-  
+
       .edu-school {
         font-size: 13px;
         color: var(--accent-light);
         font-weight: 600;
         margin-bottom: 4px;
       }
-  
+
       .edu-period {
         font-size: 11.5px;
         color: var(--text-dim);
         margin-bottom: 10px;
       }
-  
+
       .edu-note {
         font-size: 12.5px;
         color: var(--text-muted);
         line-height: 1.65;
       }
-  
+
       /* ─── CONTACT ───────────────────────────────────────── */
       #contact {
         background: var(--bg-2);
         border-top: 1px solid var(--border);
       }
-  
+
       .contact-inner {
         max-width: 620px;
         margin: 0 auto;
         text-align: center;
       }
-  
+
       .contact-form {
         margin-top: 44px;
         display: flex;
@@ -1273,26 +1281,26 @@
         gap: 14px;
         text-align: left;
       }
-  
+
       .form-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
       }
-  
+
       .form-group {
         display: flex;
         flex-direction: column;
         gap: 7px;
       }
-  
+
       .form-label {
         font-size: 12.5px;
         font-weight: 600;
         color: var(--text-muted);
         letter-spacing: 0.03em;
       }
-  
+
       .form-input,
       .form-textarea {
         background: rgba(255, 255, 255, 0.03);
@@ -1306,19 +1314,19 @@
         outline: none;
         width: 100%;
       }
-  
+
       .form-input::placeholder,
       .form-textarea::placeholder {
         color: var(--text-dim);
       }
-  
+
       .form-input:focus,
       .form-textarea:focus {
         border-color: var(--accent);
         background: rgba(14, 165, 233, 0.04);
         box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
       }
-  
+
       .form-textarea {
         min-height: 130px;
         resize: vertical;
@@ -1458,7 +1466,90 @@
       .lightbox-close:hover {
         background: var(--accent);
       }
+      .lightbox-inner {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 0;
+        max-width: 900px;
+        width: 92vw;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #0d1420;
+        border: 1px solid rgba(14, 165, 233, 0.18);
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.8);
+      }
+      .lightbox-img {
+        width: 380px;
+        min-width: 280px;
+        max-width: 45vw;
+        height: auto;
+        max-height: 70vh;
+        object-fit: cover;
+        display: block;
+        border-radius: 0;
+        box-shadow: none;
+        flex-shrink: 0;
+      }
+      .lightbox-info {
+        flex: 1;
+        padding: 36px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        justify-content: center;
+        min-height: 240px;
+        position: relative;
+      }
+      .lightbox-title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+      }
+      .lightbox-desc {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.8;
+        flex: 1;
+      }
+      .lightbox-cursor {
+        display: inline-block;
+        color: var(--accent-light);
+        font-weight: 300;
+        font-size: 16px;
+        animation: blink 0.75s step-end infinite;
+        vertical-align: baseline;
+      }
+      .lightbox-cursor.hidden {
+        display: none;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      @media (max-width: 640px) {
+        .lightbox-inner {
+          flex-direction: column;
+          width: 94vw;
+        }
+        .lightbox-img {
+          width: 100%;
+          max-width: 100%;
+          max-height: 200px;
+        }
+        .lightbox-info {
+          padding: 22px 20px;
+        }
+      }
       .lightbox-caption {
+        display: none;
         position: absolute;
         bottom: 20px;
         left: 50%;
@@ -1585,16 +1676,22 @@
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-      <div class="lightbox-caption" id="lightbox-cap"></div>
+      <div class="lightbox-inner">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+        <div class="lightbox-info">
+          <div class="lightbox-title" id="lightbox-cap"></div>
+          <p class="lightbox-desc" id="lightbox-desc"></p>
+          <span class="lightbox-cursor" id="lightbox-cursor">|</span>
+        </div>
+        </div>
     </div>
-  
+
     <!-- NAV -->
     <header>
       <nav id="nav">
         <div class="container nav-inner">
           <a href="#home" class="nav-logo">SA<span>.</span></a>
-  
+
           <ul class="nav-links">
             <li><a href="#home" class="nav-link active">Home</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
@@ -1609,7 +1706,8 @@
               title="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
               </svg>
             </a>
             <!-- Download CV -->
@@ -1631,13 +1729,13 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </a>
-            </div>
-<button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
+          </div>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </nav>
-      
+
       <!-- Mobile nav -->
       <nav class="nav-mobile" id="navMobile">
         <a href="#home" onclick="closeMenu()">Home</a>
@@ -1649,11 +1747,11 @@
         <div class="mobile-dl">
           <a href="https://linkedin.com/in/swair-aq-51b43718b" target="_blank" rel="noopener" class="btn btn-outline"
             style="font-size: 13px; padding: 10px 18px">LinkedIn</a>
-          <a href="assets/pdf/swair-cv.pdf" download class="btn btn-ghost"
-            style="font-size: 13px; padding: 10px 18px">Download CV</a>
+          <a href="assets/pdf/swair-cv.pdf" download class="btn btn-ghost" style="font-size: 13px; padding: 10px 18px">Download
+            CV</a>
         </div>
       </nav>
-      </header>
+    </header>
 
     <main>
       <!-- HERO -->
@@ -1699,55 +1797,28 @@
                 </a>
                 <a href="#contact" class="btn btn-outline">Let's Talk</a>
               </div>
-<div class="photo-strip fade-up">
-  <img src="assets/img/profile1.jpeg" alt="EmpowerHer session" class="photo-thumb" onclick="
-                    openLightbox(this.src, 'EmpowerHer — Women in Tech session')
-                  " />
-  <img src="assets/img/profile3.jpg" alt="Toastmasters MC" class="photo-thumb" onclick="
-                    openLightbox(
-                      this.src,
-                      'Toastmasters District — Master of Ceremonies',
-                    )
-                  " />
-  <img src="assets/img/profile2.jpg" alt="Women Tech Quest" class="photo-thumb" onclick="
-                    openLightbox(this.src, 'Women Tech Quest by 10Pearls')
-                  " />
-  <img src="assets/img/profile4.jpg" alt="Rebel Speakers" class="photo-thumb" onclick="
-                    openLightbox(this.src, 'Rebel Speakers — 150th Session')
-                  " />
+              <div class="hero-socials fade-up">
+                <a href="https://linkedin.com/in/swair-aq-51b43718b" target="_blank" rel="noopener" title="LinkedIn">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/swairaq" target="_blank" rel="noopener" title="GitHub">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </a>
+                <a href="mailto:swairarshad1@gmail.com" title="Email">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </a>
+              </div></div>
+            <div class="hero-img-wrap fade-up">
+              <img src="assets/img/profile.jpeg" alt="Swair Arshad" class="hero-img" loading="eager" />
               </div>
-<div class="hero-socials fade-up">
-  <a href="https://linkedin.com/in/swair-aq-51b43718b" target="_blank" rel="noopener" title="LinkedIn">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-      <path
-        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  </a>
-  <a href="https://github.com/swairAQ" target="_blank" rel="noopener" title="GitHub">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-      <path
-        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-    </svg>
-  </a>
-  <a href="https://medium.com/@swairaq" target="_blank" rel="noopener" title="Medium">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-      <path
-        d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-    </svg>
-  </a>
-  <a href="mailto:swairarshad1@gmail.com" title="Email">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-      <polyline points="22,6 12,13 2,6" />
-    </svg>
-  </a>
-</div>
-            </div>
-<div class="hero-img-wrap fade-up">
-  <img src="assets/img/profile.jpeg" alt="Swair Arshad" class="hero-img" loading="eager" />
-</div>
-</div>
+              </div>
         </div>
       </section>
 
@@ -1755,28 +1826,22 @@
       <div id="marquee-section" aria-hidden="true">
         <div class="marquee-track" id="marqueeTrack"></div>
       </div>
-<!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <div class="container">
-    <div class="fade-up">
-      <p class="section-label">Track Record</p>
-      <h2 class="section-title">
-        Numbers that <span>speak</span> for themselves
-      </h2>
-    </div>
-<!-- Stats bento — 6 cards, one wide -->
-<div class="stats-bento fade-up">
-  <div class="stat-card">
-    <div class="stat-icon">🗓️</div>
-    <div class="stat-value">6+</div>
-    <div class="stat-label">Years of experience</div>
-    <div class="stat-sub">React Native since 2019</div>
-  </div>
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="fade-up">
+            <p class="section-label">Track Record</p>
+            <h2 class="section-title">
+              Numbers that <span>speak</span> for themselves
+            </h2>
+          </div>
+          <!-- Stats bento — 6 cards, one wide -->
+          <div class="stats-bento fade-up">
             <div class="stat-card">
-              <div class="stat-icon">📱</div>
-              <div class="stat-value">9+</div>
-              <div class="stat-label">Production apps shipped</div>
-              <div class="stat-sub">iOS &amp; Android, live in stores</div>
+              <div class="stat-icon">🗓️</div>
+              <div class="stat-value">6+</div>
+              <div class="stat-label">Years of experience</div>
+              <div class="stat-sub">React Native since 2019</div>
             </div>
             <div class="stat-card">
               <div class="stat-icon">⚡</div>
@@ -1799,41 +1864,25 @@
               </div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="
-                              display: flex;
-                              align-items: center;
-                              gap: 10px;
-                              margin-bottom: 14px;
-                            ">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="color: #e2e8f0">
-                  <path
-                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                </svg>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="color: #a3d977">
-                  <path
-                    d="M17.523 15.341c-.093.225-.19.443-.294.653a8.3 8.3 0 0 1-.408.7c-.214.308-.413.521-.593.642-.24.157-.497.237-.773.24-.197 0-.435-.056-.712-.17-.278-.113-.534-.169-.77-.169-.246 0-.51.056-.791.169-.282.114-.509.173-.684.178-.265.008-.527-.075-.784-.247-.192-.13-.4-.35-.623-.661a8.934 8.934 0 0 1-.461-.763 8.783 8.783 0 0 1-.612-1.603 6.208 6.208 0 0 1-.23-1.638c0-.606.13-1.13.39-1.568.205-.352.477-.63.819-.835a2.2 2.2 0 0 1 1.107-.314c.218 0 .503.067.857.2.353.133.58.2.68.2.074 0 .325-.079.749-.236.401-.146.74-.207 1.019-.184.753.06 1.318.357 1.692.89-.673.408-1.006.98-.999 1.712.006.571.213 1.046.619 1.423.184.175.39.31.617.406-.049.143-.101.28-.156.408zM14.8 3.6c0 .448-.163.867-.489 1.256-.393.46-.868.725-1.383.683a1.39 1.39 0 0 1-.01-.17c0-.43.187-.889.518-1.265.165-.19.375-.347.631-.473.255-.124.496-.193.723-.205.006.058.01.116.01.174z" />
-                </svg>
-              </div>
-              <div class="stat-value" style="font-size: 32px; letter-spacing: -0.02em">
-                iOS + Android
-              </div>
-              <div class="stat-label">Both platforms, every project</div>
-              <div class="stat-sub">App Store &amp; Play Store deployments</div>
-              </div>
+              <div class="stat-icon">✨</div>
+              <div class="stat-value">5+</div>
+              <div class="stat-label">Projects enhanced</div>
+              <div class="stat-sub">Optimised, extended &amp; rescued</div>
+            </div>
           </div>
-<!-- Timeline -->
-<div class="fade-up" style="margin-top: 80px">
-  <p class="section-label">Career Path</p>
-  <h2 class="section-title">Work <span>Experience</span></h2>
-</div>
-<div class="timeline">
-  <div class="timeline-item fade-up">
-    <div class="timeline-dot"></div>
-    <div class="timeline-card">
-      <div class="timeline-header">
-        <div class="timeline-role">
-          Mobile App Developer (React Native)
-        </div>
+          <!-- Timeline -->
+          <div class="fade-up" style="margin-top: 80px">
+            <p class="section-label">Career Path</p>
+            <h2 class="section-title">Work <span>Experience</span></h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <div class="timeline-role">
+                    Mobile App Developer (React Native)
+                  </div>
                   <div class="timeline-period">Dec 2019 – Present</div>
                 </div>
                 <div class="timeline-company">DPL · Islamabad, Pakistan</div>
@@ -1865,113 +1914,132 @@
                     optimisation.
                   </li>
                 </ul>
-                </div>
+              </div>
             </div>
-<div class="timeline-item fade-up">
-  <div class="timeline-dot"></div>
-  <div class="timeline-card">
-    <div class="timeline-header">
-      <div class="timeline-role">Junior Mobile App Developer</div>
-      <div class="timeline-period">Aug 2019 – Dec 2019</div>
-    </div>
-    <div class="timeline-company">T-Tech Solutions · Pakistan</div>
-    <ul class="timeline-bullets">
-      <li>
-        Developed an MVP mobile solution for GCC police authorities
-        — OCR-based vehicle number plate scanning, real-time record
-        lookup, and stolen vehicle flagging.
-      </li>
-      <li>
-        Built end-to-end in React Native with camera and OCR
-        integration, working directly with client stakeholders to
-        refine requirements.
-      </li>
-    </ul>
-  </div>
-</div>
-</div>
+            <div class="timeline-item fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <div class="timeline-role">Junior Mobile App Developer</div>
+                  <div class="timeline-period">Aug 2019 – Dec 2019</div>
+                </div>
+                <div class="timeline-company">T-Tech Solutions · Pakistan</div>
+                <ul class="timeline-bullets">
+                  <li>
+                    Developed an MVP mobile solution for GCC police authorities
+                    — OCR-based vehicle number plate scanning, real-time record
+                    lookup, and stolen vehicle flagging.
+                  </li>
+                  <li>
+                    Built end-to-end in React Native with camera and OCR
+                    integration, working directly with client stakeholders to
+                    refine requirements.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </div>
         </div>
       </section>
-<div class="divider"></div>
+      <div class="divider"></div>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="container">
-    <div class="fade-up">
-      <p class="section-label">Selected Work</p>
-      <h2 class="section-title">Apps I've <span>shipped</span></h2>
-    </div>
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="fade-up">
+            <p class="section-label">Selected Work</p>
+            <h2 class="section-title">Apps I've <span>shipped</span></h2>
+          </div>
 
-    <!-- Featured 3 -->
-    <div class="projects-featured">
-      <!-- NOVA LiFE — featured-lg -->
-      <article class="project-card featured-lg fade-up">
-        <div class="project-img-wrap">
-          <img src="https://www.novalifeapp.com/images/socail%20sharing.png" alt="NOVA LiFE — AI Recovery Companion"
-            loading="lazy" />
-          <div class="project-overlay"></div>
-          <div class="project-links-overlay">
-            <span class="tag" style="
+          <!-- Featured 3 -->
+          <div class="projects-featured">
+            <!-- NOVA LiFE — featured-lg -->
+            <article class="project-card featured-lg fade-up">
+              <div class="project-img-wrap">
+                <img src="https://www.novalifeapp.com/images/socail%20sharing.png" alt="NOVA LiFE — AI Recovery Companion"
+                  loading="lazy" />
+                <div class="project-overlay"></div>
+                <div class="project-links-overlay">
+                  <span class="tag" style="
                       background: rgba(14, 165, 233, 0.9);
                       color: #fff;
                       border-color: transparent;
                       cursor: default;
-                    ">🏆 Featured</span>
-            <a href="https://novalifeapp.com" target="_blank" rel="noopener" class="project-link-btn">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              novalifeapp.com
-            </a>
+                    "
+                    >🏆 Featured</span
+                  >
+                  <a
+                    href="https://novalifeapp.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link-btn"
+                  >
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    novalifeapp.com
+                  </a>
                 </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">NOVA LiFE — AI Sobriety Companion</h3>
+                <p class="project-desc">
+                  The first AI recovery companion that remembers your full
+                  story, reads how your body actually feels, and walks with you
+                  through every moment that matters. Built real-time therapeutic
+                  voice conversations via ElevenLabs Conversational AI (running
+                  on LiveKit/WebRTC under the hood), with vocal biomarker
+                  analysis through Canary Speech SDK. End-to-end voice latency
+                  under 500ms. HIPAA-compliant, trauma-informed design.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React Native</span>
+                  <span class="tag">ElevenLabs Conversational AI</span>
+                  <span class="tag">Canary Speech SDK</span>
+                  <span class="tag">Zustand</span>
+                  <span class="tag">HIPAA</span>
+                  <span class="tag">Healthcare</span>
                 </div>
-                <div class="project-body">
-                  <h3 class="project-title">NOVA LiFE — AI Sobriety Companion</h3>
-                  <p class="project-desc">
-                    The first AI recovery companion that remembers your full
-                    story, reads how your body actually feels, and walks with you
-                    through every moment that matters. Built real-time therapeutic
-                    voice conversations via ElevenLabs Conversational AI (running
-                    on LiveKit/WebRTC under the hood), with vocal biomarker
-                    analysis through Canary Speech SDK. End-to-end voice latency
-                    under 500ms. HIPAA-compliant, trauma-informed design.
-                  </p>
-                  <div class="project-tags">
-                    <span class="tag">React Native</span>
-                    <span class="tag">ElevenLabs Conversational AI</span>
-                    <span class="tag">Canary Speech SDK</span>
-                    <span class="tag">Zustand</span>
-                    <span class="tag">HIPAA</span>
-                    <span class="tag">Healthcare</span>
-                  </div>
-                </div>
-                </article>
-                
-                <!-- The Breath Source -->
-                <article class="project-card fade-up">
-                  <div class="project-img-wrap">
-                    <img src="assets/img/project-tbs.png" alt="The Breath Source Wellness App" loading="lazy" />
-                    <div class="project-overlay"></div>
-                    <div class="project-links-overlay">
-                      <a href="https://apps.apple.com/us/app/the-breath-source-breathwork/id6444403944" target="_blank" rel="noopener"
-                        class="project-link-btn">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                          <path
-                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                        </svg>
-                        App Store
-                      </a>
-                      <a href="https://play.google.com/store/apps/details?id=com.thebreathsource.prod" target="_blank" rel="noopener"
-                        class="project-link-btn">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                          <path
-                            d="M3.18 23.76c.31.17.67.19 1.01.04l12.94-7.42-2.76-2.76-11.19 10.14zm-1.75-20.5C1.16 3.6 1 4 1 4.4v15.2c0 .4.16.8.43 1.13l.06.06 8.52-8.52v-.2L1.43 3.2l-.06.06zm18.1 9.29l-2.59-1.49-3.02 3.02 3.02 3.02 2.62-1.5c.75-.43.75-1.12-.03-1.55zM4.19.24L17.13 7.66l-2.76 2.76L3.2.28c.33-.16.7-.19 1-.04z" />
-                        </svg>
-                        Play
-                      </a>
+              </div>
+              </article>
+              
+              <!-- The Breath Source -->
+              <article class="project-card fade-up">
+                <div class="project-img-wrap">
+                <img src="assets/img/project-tbs.png" alt="The Breath Source Wellness App" loading="lazy" />
+                <div class="project-overlay"></div>
+                <div class="project-links-overlay">
+                  <a href="https://apps.apple.com/us/app/the-breath-source-breathwork/id6444403944" target="_blank" rel="noopener"
+                    class="project-link-btn">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                      />
+                    </svg>
+                    App Store
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.thebreathsource.prod" target="_blank" rel="noopener"
+                    class="project-link-btn">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M3.18 23.76c.31.17.67.19 1.01.04l12.94-7.42-2.76-2.76-11.19 10.14zm-1.75-20.5C1.16 3.6 1 4 1 4.4v15.2c0 .4.16.8.43 1.13l.06.06 8.52-8.52v-.2L1.43 3.2l-.06.06zm18.1 9.29l-2.59-1.49-3.02 3.02 3.02 3.02 2.62-1.5c.75-.43.75-1.12-.03-1.55zM4.19.24L17.13 7.66l-2.76 2.76L3.2.28c.33-.16.7-.19 1-.04z"
+                      />
+                    </svg>
+                    Play
+                  </a>
                 </div>
               </div>
               <div class="project-body">
@@ -1989,23 +2057,23 @@
                   <span class="tag">Apple IAP</span>
                 </div>
               </div>
-              </article>
-              
-              <!-- 0-100 -->
-              <article class="project-card fade-up">
-                <div class="project-img-wrap">
-                  <img src="assets/img/project-0-100.png" alt="0-100 Trivia Game" loading="lazy" />
-                  <div class="project-overlay"></div>
-                  <div class="project-links-overlay">
-                    <a href="https://apps.apple.com/gb/app/0-100/id1668152516" target="_blank" rel="noopener"
-                      class="project-link-btn">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                      </svg>
-                      App Store
-                    </a>
-                  </div>
+            </article>
+            
+            <!-- 0-100 -->
+            <article class="project-card fade-up">
+              <div class="project-img-wrap">
+                <img src="assets/img/project-0-100.png" alt="0-100 Trivia Game" loading="lazy" />
+                <div class="project-overlay"></div>
+                <div class="project-links-overlay">
+                  <a href="https://apps.apple.com/gb/app/0-100/id1668152516" target="_blank" rel="noopener" class="project-link-btn">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                      />
+                    </svg>
+                    App Store
+                  </a>
+                </div>
               </div>
               <div class="project-body">
                 <h3 class="project-title">0-100 Trivia Game</h3>
@@ -2022,14 +2090,14 @@
                   <span class="tag">Animatable</span>
                 </div>
               </div>
-              </article>
-              </div>
+            </article>
+            </div>
 
           <!-- More projects with images -->
           <div style="margin-top: 52px" class="fade-up">
             <p class="section-label">More Projects</p>
           </div>
-          
+
           <div class="projects-secondary">
             <!-- DQCA -->
             <article class="project-mini fade-up">
@@ -2055,7 +2123,7 @@
                 </div>
               </div>
             </article>
-          
+
             <!-- Healness -->
             <article class="project-mini fade-up">
               <div class="mini-img-wrap">
@@ -2075,11 +2143,11 @@
                     <span class="tag">Swish</span>
                   </div>
                   <div class="mini-links">
-                    <a href="https://apps.apple.com/se/app/healness-co/id1498189455" target="_blank" rel="noopener"
-                      class="mini-link">
+                    <a href="https://apps.apple.com/se/app/healness-co/id1498189455" target="_blank" rel="noopener" class="mini-link">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                         <path
-                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                        />
                       </svg>
                       iOS
                     </a>
@@ -2087,20 +2155,21 @@
                       class="mini-link">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                         <path
-                          d="M3.18 23.76c.31.17.67.19 1.01.04l12.94-7.42-2.76-2.76-11.19 10.14zm-1.75-20.5C1.16 3.6 1 4 1 4.4v15.2c0 .4.16.8.43 1.13l.06.06 8.52-8.52v-.2L1.43 3.2l-.06.06zm18.1 9.29l-2.59-1.49-3.02 3.02 3.02 3.02 2.62-1.5c.75-.43.75-1.12-.03-1.55zM4.19.24L17.13 7.66l-2.76 2.76L3.2.28c.33-.16.7-.19 1-.04z" />
+                          d="M3.18 23.76c.31.17.67.19 1.01.04l12.94-7.42-2.76-2.76-11.19 10.14zm-1.75-20.5C1.16 3.6 1 4 1 4.4v15.2c0 .4.16.8.43 1.13l.06.06 8.52-8.52v-.2L1.43 3.2l-.06.06zm18.1 9.29l-2.59-1.49-3.02 3.02 3.02 3.02 2.62-1.5c.75-.43.75-1.12-.03-1.55zM4.19.24L17.13 7.66l-2.76 2.76L3.2.28c.33-.16.7-.19 1-.04z"
+                        />
                       </svg>
                       Android
                     </a>
-                    </div>
+                  </div>
                 </div>
               </div>
-              </article>
-              
-              <!-- nGAGE -->
-              <article class="project-mini fade-up">
-                <div class="mini-img-wrap">
-                  <img src="assets/img/project-ngage.png" alt="nGAGE Work App" loading="lazy" />
-                  <div class="mini-img-overlay"></div>
+            </article>
+            
+            <!-- nGAGE -->
+            <article class="project-mini fade-up">
+              <div class="mini-img-wrap">
+                <img src="assets/img/project-ngage.png" alt="nGAGE Work App" loading="lazy" />
+                <div class="mini-img-overlay"></div>
                 </div>
                 <div class="project-mini-body">
                   <h3 class="project-mini-title">nGAGE @ Work</h3>
@@ -2113,26 +2182,27 @@
                       <span class="tag">Enterprise</span>
                     </div>
                     <div class="mini-links">
-                      <a href="https://apps.apple.com/pk/app/ngage-work/id1668799332" target="_blank" rel="noopener"
-                        class="mini-link">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                          <path
-                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                        </svg>
-                        iOS
-                      </a>
+                    <a href="https://apps.apple.com/pk/app/ngage-work/id1668799332" target="_blank" rel="noopener" class="mini-link">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                        />
+                      </svg>
+                      iOS
+                    </a>
                     <a href="https://play.google.com/store/apps/details?id=com.ngageatwork.ngage" target="_blank" rel="noopener"
                       class="mini-link">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                         <path
-                          d="M3.18 23.76c.31.17.67.19 1.01.04l12.94-7.42-2.76-2.76-11.19 10.14zm-1.75-20.5C1.16 3.6 1 4 1 4.4v15.2c0 .4.16.8.43 1.13l.06.06 8.52-8.52v-.2L1.43 3.2l-.06.06zm18.1 9.29l-2.59-1.49-3.02 3.02 3.02 3.02 2.62-1.5c.75-.43.75-1.12-.03-1.55zM4.19.24L17.13 7.66l-2.76 2.76L3.2.28c.33-.16.7-.19 1-.04z" />
+                          d="M3.18 23.76c.31.17.67.19 1.01.04l12.94-7.42-2.76-2.76-11.19 10.14zm-1.75-20.5C1.16 3.6 1 4 1 4.4v15.2c0 .4.16.8.43 1.13l.06.06 8.52-8.52v-.2L1.43 3.2l-.06.06zm18.1 9.29l-2.59-1.49-3.02 3.02 3.02 3.02 2.62-1.5c.75-.43.75-1.12-.03-1.55zM4.19.24L17.13 7.66l-2.76 2.76L3.2.28c.33-.16.7-.19 1-.04z"
+                        />
                       </svg>
                       Android
                     </a>
-                    </div>
+                  </div>
                 </div>
-                </div>
-                </article>
+              </div>
+              </article>
 
             <!-- Stegvis -->
             <article class="project-mini fade-up">
@@ -2157,14 +2227,15 @@
                     <a href="https://apps.apple.com/us/app/id979588769" target="_blank" rel="noopener" class="mini-link">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                         <path
-                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                        />
                       </svg>
                       App Store
                     </a>
                   </div>
                 </div>
-                </div>
-                </article>
+              </div>
+              </article>
 
             <!-- GSTAR -->
             <article class="project-mini fade-up">
@@ -2184,11 +2255,11 @@
                     <span class="tag">Events</span>
                   </div>
                   <div class="mini-links">
-                    <a href="https://apps.apple.com/sa/app/gstar-2020/id1462259292" target="_blank" rel="noopener"
-                      class="mini-link">
+                    <a href="https://apps.apple.com/sa/app/gstar-2020/id1462259292" target="_blank" rel="noopener" class="mini-link">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                         <path
-                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                        />
                       </svg>
                       App Store
                     </a>
@@ -2218,7 +2289,8 @@
                     <a href="https://apps.apple.com/us/app/id979588769" target="_blank" rel="noopener" class="mini-link">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                         <path
-                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                        />
                       </svg>
                       App Store
                     </a>
@@ -2226,7 +2298,7 @@
                 </div>
               </div>
             </article>
-            </div>
+          </div>
         </div>
       </section>
 
@@ -2322,8 +2394,8 @@
               </div>
             </div>
           </div>
-          </div>
-          </section>
+        </div>
+        </section>
 
       <div class="divider"></div>
 
@@ -2335,6 +2407,14 @@
             <h2 class="section-title">
               Achievements &amp; <span>Community</span>
             </h2>
+          </div>
+
+          <!-- Photo strip — community moments -->
+          <div class="photo-strip fade-up" style="margin-top:36px;justify-content:flex-start">
+            <img src="assets/img/profile1.jpeg" alt="EmpowerHer session" class="photo-thumb" onclick="openLightbox(this.src,'EmpowerHer — Women in Tech','Took the stage at EmpowerHer to talk about building a career at the intersection of technology and leadership. The session explored how developers can grow beyond code — into mentors, advocates, and change-makers. A room full of women in tech, asking hard questions and pushing each other forward. That afternoon reminded me why representation in engineering isn\'t just important — it\'s essential.')" />
+            <img src="assets/img/profile3.jpg"  alt="Toastmasters MC"    class="photo-thumb" onclick="openLightbox(this.src,'Toastmasters District — Master of Ceremonies','Hosted a full Toastmasters District event as Master of Ceremonies — keeping attendees engaged, transitions seamless, and energy high across a packed schedule of speakers and competitions. Three terms as Club President taught me that the best leaders don\'t just speak well; they make everyone around them feel heard. This was one of those days.')" />
+            <img src="assets/img/profile2.jpg"  alt="Women Tech Quest"   class="photo-thumb" onclick="openLightbox(this.src,'Women Tech Quest by 10Pearls','Women Tech Quest brought together some of the most driven women in Pakistan\'s tech industry under one roof. Being part of the event meant contributing to a conversation that is slowly reshaping what the industry looks like. Every session and every connection made there is a thread in a bigger story about what Pakistani tech can become.')" />
+            <img src="assets/img/profile4.jpg"  alt="Rebel Speakers"     class="photo-thumb" onclick="openLightbox(this.src,'Rebel Speakers — 150th Session','The 150th meeting of Rebel Speakers — a milestone for a club that started as a small gathering and grew into a community of confident, articulate leaders. As President, watching members walk in nervous and walk out transformed was the most rewarding part of the role. Public speaking changes people. It changed me.')" />
           </div>
 
           <div class="achievements-grid">
@@ -2417,15 +2497,15 @@
               </div>
             </div>
           </div>
-<div style="margin-top: 80px" class="fade-up">
-  <p class="section-label">Education</p>
-  <h2 class="section-title">Academic <span>Background</span></h2>
-</div>
-<div class="education-grid">
-  <div class="edu-card fade-up">
-    <h3 class="edu-degree">PGD in Project Management</h3>
-    <div class="edu-school">
-      London College of Professional Studies (LCPS)
+          <div style="margin-top: 80px" class="fade-up">
+            <p class="section-label">Education</p>
+            <h2 class="section-title">Academic <span>Background</span></h2>
+          </div>
+          <div class="education-grid">
+            <div class="edu-card fade-up">
+              <h3 class="edu-degree">PGD in Project Management</h3>
+              <div class="edu-school">
+                London College of Professional Studies (LCPS)
               </div>
               <div class="edu-period">Nov 2022 – Feb 2023</div>
               <p class="edu-note">
@@ -2447,74 +2527,74 @@
                 Strong foundation in software development, algorithm design, and
                 IT infrastructure, with a focus on real-world problem-solving.
               </p>
-              </div>
-              </div>
+            </div>
+            </div>
         </div>
       </section>
-<div class="divider"></div>
+      <div class="divider"></div>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="fade-up">
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-title">
-          Let's <span>build</span> something great
-        </h2>
-        <p style="
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="contact-inner">
+            <div class="fade-up">
+              <p class="section-label">Get In Touch</p>
+              <h2 class="section-title">
+                Let's <span>build</span> something great
+              </h2>
+              <p style="
                   color: var(--text-muted);
                   margin-top: 14px;
                   font-size: 15.5px;
                   line-height: 1.75;
-                ">
-          Whether it's a project, collaboration, or just a conversation —
-          I'm currently open to new opportunities.
-        </p>
-      </div>
+                "
+              >
+                Whether it's a project, collaboration, or just a conversation —
+                I'm currently open to new opportunities.
+              </p>
+            </div>
 
-      <form class="contact-form fade-up" id="contactForm" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="name">Full Name</label>
-            <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name"
-              required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="jane@company.com"
-              autocomplete="email" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="subject">Subject</label>
-          <input class="form-input" type="text" id="subject" name="subject"
-            placeholder="Project enquiry / collaboration..." />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea class="form-textarea" id="message" name="message"
-            placeholder="Tell me about your project or idea..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
-          <span class="btn-text">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" style="
+            <form class="contact-form fade-up" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Full Name</label>
+                  <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email"
+                    required />
+                  </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="subject">Subject</label>
+                <input class="form-input" type="text" id="subject" name="subject" placeholder="Project enquiry / collaboration..." />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="message">Message</label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project or idea..."
+                  required></textarea>
+                </div>
+              <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                <span class="btn-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" style="
                       display: inline-block;
                       vertical-align: middle;
                       margin-right: 6px;
-                    ">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-            Send Message
-          </span>
-          <div class="spinner"></div>
-        </button>
-        <div class="form-success" id="formSuccess">
-          ✅ Message sent! I'll get back to you within 24 hours.
-        </div>
-      </form>
+                    "
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                  Send Message
+                </span>
+                <div class="spinner"></div>
+              </button>
+              <div class="form-success" id="formSuccess">
+                ✅ Message sent! I'll get back to you within 24 hours.
+              </div>
+            </form>
 
             <div class="contact-alt fade-up">
               <a href="mailto:swairarshad1@gmail.com" class="contact-link">
@@ -2524,23 +2604,25 @@
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 swairarshad1@gmail.com
-                </a>
-                <a href="https://linkedin.com/in/swair-aq-51b43718b" target="_blank" rel="noopener" class="contact-link">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                  LinkedIn
-                </a>
+              </a>
+              <a href="https://linkedin.com/in/swair-aq-51b43718b" target="_blank" rel="noopener" class="contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+                LinkedIn
+              </a>
               <a href="https://medium.com/@swairaq" target="_blank" rel="noopener" class="contact-link">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path
-                    d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+                    d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
+                  />
                 </svg>
                 Medium Blog
               </a>
             </div>
-            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -2556,154 +2638,177 @@
         </p>
       </div>
     </footer>
-<script>
-  // ── Marquee ───────────────────────────────────────────────
-  const skills = [
-    "React Native",
-    "TypeScript",
-    "JavaScript",
-    "ElevenLabs AI",
-    "Canary Speech SDK",
-    "iOS Development",
-    "Android Development",
-    "Firebase",
-    "AWS Amplify",
-    "Redux",
-    "Zustand",
-    "NFC",
-    "IoT",
-    "Figma",
-    "Agile / Scrum",
-    "App Store",
-    "Play Store",
-    "Swish",
-    "Bank ID",
-    "Apple IAP",
-    "HIPAA",
-  ];
-  const track = document.getElementById("marqueeTrack");
-  const all = [...skills, ...skills];
-  track.innerHTML = all
-    .map(
-      (s) =>
-        `<span class="marquee-item"><span class="marquee-dot"></span>${s}</span>`,
-    )
-    .join("");
+    <script>
+      // ── Marquee ───────────────────────────────────────────────
+      const skills = [
+        "React Native",
+        "TypeScript",
+        "JavaScript",
+        "ElevenLabs AI",
+        "Canary Speech SDK",
+        "iOS Development",
+        "Android Development",
+        "Firebase",
+        "AWS Amplify",
+        "Redux",
+        "Zustand",
+        "NFC",
+        "IoT",
+        "Figma",
+        "Agile / Scrum",
+        "App Store",
+        "Play Store",
+        "Swish",
+        "Bank ID",
+        "Apple IAP",
+        "HIPAA",
+      ];
+      const track = document.getElementById("marqueeTrack");
+      const all = [...skills, ...skills];
+      track.innerHTML = all
+        .map(
+          (s) =>
+            `<span class="marquee-item"><span class="marquee-dot"></span>${s}</span>`,
+        )
+        .join("");
 
-  // ── Nav ───────────────────────────────────────────────────
-  const nav = document.getElementById("nav");
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+        // ── Nav ───────────────────────────────────────────────────
+        const nav = document.getElementById("nav");
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
 
-  function updateNav() {
-    nav.classList.toggle("scrolled", window.scrollY > 40);
-    let cur = "";
-    sections.forEach((s) => {
-      if (window.scrollY >= s.offsetTop - 130) cur = s.id;
-    });
-    navLinks.forEach((a) =>
-      a.classList.toggle("active", a.getAttribute("href") === "#" + cur),
-    );
-  }
-  window.addEventListener("scroll", updateNav, { passive: true });
-  updateNav();
-
-  // ── Mobile nav ────────────────────────────────────────────
-  const toggle = document.getElementById("navToggle");
-  const mob = document.getElementById("navMobile");
-
-  toggle.addEventListener("click", () => {
-    const open = mob.classList.toggle("open");
-    toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", open);
-    document.body.style.overflow = open ? "hidden" : "";
-  });
-
-  function closeMenu() {
-    mob.classList.remove("open");
-    toggle.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  }
-
-  // ── Fade-up observer ─────────────────────────────────────
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add("visible"), i * 60);
+        function updateNav() {
+          nav.classList.toggle("scrolled", window.scrollY > 40);
+          let cur = "";
+          sections.forEach((s) => {
+            if (window.scrollY >= s.offsetTop - 130) cur = s.id;
+          });
+          navLinks.forEach((a) =>
+            a.classList.toggle("active", a.getAttribute("href") === "#" + cur),
+          );
         }
+        window.addEventListener("scroll", updateNav, { passive: true });
+        updateNav();
+
+        // ── Mobile nav ────────────────────────────────────────────
+        const toggle = document.getElementById("navToggle");
+        const mob = document.getElementById("navMobile");
+
+        toggle.addEventListener("click", () => {
+          const open = mob.classList.toggle("open");
+          toggle.classList.toggle("open", open);
+          toggle.setAttribute("aria-expanded", open);
+          document.body.style.overflow = open ? "hidden" : "";
+        });
+
+        function closeMenu() {
+          mob.classList.remove("open");
+          toggle.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        }
+
+        // ── Fade-up observer ─────────────────────────────────────
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e, i) => {
+              if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add("visible"), i * 60);
+              }
+            });
+          },
+          { threshold: 0.08 },
+        );
+        document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
+
+        // ── Contact form ──────────────────────────────────────────
+        const form = document.getElementById("contactForm");
+        const btn = document.getElementById("submitBtn");
+        const success = document.getElementById("formSuccess");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          btn.classList.add("loading");
+          btn.disabled = true;
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject =
+          document.getElementById("subject").value || "Portfolio enquiry";
+        const message = document.getElementById("message").value;
+        const mailto = `mailto:swairarshad1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " <" + email + ">\n\n" + message)}`;
+
+        await new Promise((r) => setTimeout(r, 1500));
+        window.location.href = mailto;
+
+        btn.classList.remove("loading");
+        btn.style.display = "none";
+        success.style.display = "block";
+        form.reset();
+
+        setTimeout(() => {
+          btn.style.display = "";
+          btn.disabled = false;
+          success.style.display = "none";
+        }, 6000);
       });
-    },
-    { threshold: 0.08 },
-  );
-  document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
 
-  // ── Contact form ──────────────────────────────────────────
-  const form = document.getElementById("contactForm");
-  const btn = document.getElementById("submitBtn");
-  const success = document.getElementById("formSuccess");
+        // ── Lightbox + Typewriter ─────────────────────────────────
+        const lb = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lightbox-img");
+        const lbCap = document.getElementById("lightbox-cap");
+        const lbDesc = document.getElementById("lightbox-desc");
+        const lbCursor = document.getElementById("lightbox-cursor");
+        let twTimer = null;
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    btn.classList.add("loading");
-    btn.disabled = true;
+        function typewriter(text, el, speed) {
+          el.textContent = "";
+          lbCursor.classList.remove("hidden");
+          let i = 0;
+          clearInterval(twTimer);
+          twTimer = setInterval(() => {
+            if (i < text.length) {
+              el.textContent += text[i++];
+            } else {
+              clearInterval(twTimer);
+              setTimeout(() => lbCursor.classList.add("hidden"), 1800);
+            }
+          }, speed || 20);
+        }
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject =
-      document.getElementById("subject").value || "Portfolio enquiry";
-    const message = document.getElementById("message").value;
-    const mailto = `mailto:swairarshad1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " <" + email + ">\n\n" + message)}`;
-
-    await new Promise((r) => setTimeout(r, 1500));
-    window.location.href = mailto;
-
-    btn.classList.remove("loading");
-    btn.style.display = "none";
-    success.style.display = "block";
-    form.reset();
-
-    setTimeout(() => {
-      btn.style.display = "";
-      btn.disabled = false;
-      success.style.display = "none";
-    }, 6000);
-  });
-
-  // ── Lightbox ──────────────────────────────────────────────
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lightbox-img");
-  const lbCap = document.getElementById("lightbox-cap");
-
-  function openLightbox(src, cap) {
-    lbImg.src = src;
-    lbImg.alt = cap;
-    lbCap.textContent = cap;
-    lb.classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
-  function closeLightbox() {
-    lb.classList.remove("open");
-    document.body.style.overflow = "";
-  }
-  lb.addEventListener("click", (e) => {
-    if (e.target === lb) closeLightbox();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
-  });
-
-  // ── Smooth scroll ─────────────────────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", (e) => {
-      const t = document.querySelector(a.getAttribute("href"));
-      if (t) {
-        e.preventDefault();
-        t.scrollIntoView({ behavior: "smooth", block: "start" });
+        function openLightbox(src, cap, desc) {
+          lbImg.src = src;
+          lbImg.alt = cap;
+          lbCap.textContent = cap;
+        lbDesc.textContent = "";
+        lbCursor.classList.remove("hidden");
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => typewriter(desc || "", lbDesc, 20), 220);
       }
-    });
-  });
-</script>
-</body>
+
+        function closeLightbox() {
+        clearInterval(twTimer);
+            lb.classList.remove("open");
+            document.body.style.overflow = "";
+          }
+          lb.addEventListener("click", (e) => {
+            if (e.target === lb) closeLightbox();
+          });
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeLightbox();
+          });
+
+        // ── Smooth scroll ─────────────────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", (e) => {
+            const t = document.querySelector(a.getAttribute("href"));
+            if (t) {
+              e.preventDefault();
+              t.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+      </script>
+    </body>
 </html>
