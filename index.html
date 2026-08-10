@@ -36,6 +36,23 @@
         scroll-behavior: smooth;
       }
 
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .inline-link {
+        color: var(--accent-light);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.35);
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .inline-link:hover {
+        color: var(--accent-light);
+        border-bottom-color: var(--accent-light);
+      }
+
       :root {
         --accent: #0ea5e9;
         --accent-light: #38bdf8;
@@ -210,18 +227,6 @@
       .nav-links a.active {
         color: var(--text);
         background: rgba(255, 255, 255, 0.055);
-      }
-
-      .nav-links a.active::after {
-        content: "";
-        position: absolute;
-        bottom: 3px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: var(--accent-light);
       }
 
       .nav-actions {
@@ -755,8 +760,21 @@
       }
 
       .stat-icon {
-        font-size: 26px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(14, 165, 233, 0.1);
+        border: 1px solid var(--border-hover);
+        color: var(--accent-light);
         margin-bottom: 14px;
+      }
+
+      .stat-icon svg {
+        width: 18px;
+        height: 18px;
       }
 
       .stat-value {
@@ -1198,10 +1216,21 @@
       }
 
       .achievement-emoji {
-        font-size: 28px;
+        width: 42px;
+        height: 42px;
         flex-shrink: 0;
-        line-height: 1;
-        margin-top: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(14, 165, 233, 0.1);
+        border: 1px solid var(--border-hover);
+        color: var(--accent-light);
+      }
+
+      .achievement-emoji svg {
+        width: 19px;
+        height: 19px;
       }
 
       .achievement-title {
@@ -1809,6 +1838,16 @@
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
                 </a>
+                <a href="https://medium.com/@swairaq" target="_blank" rel="noopener" title="Medium">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                  </svg>
+                </a>
+                <a href="https://dev.to/swair_aq" target="_blank" rel="noopener" title="Dev.to">
+                  <svg width="17" height="17" viewBox="0 0 448 512" fill="currentColor">
+                    <path d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35 3.88-2.9 5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM398.99 32H49.01C21.94 32 0 53.94 0 81.01v349.98C0 458.06 21.94 480 49.01 480h349.98c27.07 0 49.01-21.94 49.01-49.01V81.01C448 53.94 426.06 32 398.99 32zM158.4 314.36c0 15.09-4.51 27.79-13.52 38.11-9.02 10.32-21.91 15.48-38.68 15.48H55.03V166.05h51.71c16.03 0 28.66 4.98 37.86 14.94 9.2 9.96 13.8 22.5 13.8 37.62v95.75zM294.4 213.71h-59.75v45.15h37.02v33.65h-37.02v45.15h59.75v33.65h-93.4V180.06h93.4v33.65zM389.65 366.15h-31.94l-51.4-186.09h35.24l32.34 121.05 32.34-121.05h35.24l-51.82 186.09z"/>
+                  </svg>
+                </a>
                 <a href="mailto:swairarshad1@gmail.com" title="Email">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -1838,25 +1877,25 @@
           <!-- Stats bento — 6 cards, one wide -->
           <div class="stats-bento fade-up">
             <div class="stat-card">
-              <div class="stat-icon">🗓️</div>
+              <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
               <div class="stat-value">6+</div>
               <div class="stat-label">Years of experience</div>
               <div class="stat-sub">React Native since 2019</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon">⚡</div>
+              <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
               <div class="stat-value">95%</div>
               <div class="stat-label">On-time delivery rate</div>
               <div class="stat-sub">Across all client engagements</div>
             </div>
             <div class="stat-card wide">
-              <div class="stat-icon">🚀</div>
+              <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
               <div class="stat-value">30%</div>
               <div class="stat-label">Average app performance improvement</div>
               <div class="stat-sub">Across optimised production codebases</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon">🤝</div>
+              <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
               <div class="stat-value">10+</div>
               <div class="stat-label">Client projects delivered</div>
               <div class="stat-sub">
@@ -1864,7 +1903,7 @@
               </div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon">✨</div>
+              <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
               <div class="stat-value">5+</div>
               <div class="stat-label">Projects enhanced</div>
               <div class="stat-sub">Optimised, extended &amp; rescued</div>
@@ -1912,6 +1951,11 @@
                     Mentored junior developers on React Native best practices,
                     state management patterns, and mobile performance
                     optimisation.
+                  </li>
+                  <li>
+                    Featured by DPL in their
+                    <a href="https://www.youtube.com/watch?v=OlWErpwY2LA" target="_blank" rel="noopener" class="inline-link">Rebel Stories</a>
+                    company success-story series.
                   </li>
                 </ul>
               </div>
@@ -1966,7 +2010,7 @@
                       border-color: transparent;
                       cursor: default;
                     "
-                    >🏆 Featured</span
+                    >Featured</span
                   >
                   <a
                     href="https://novalifeapp.com"
@@ -2156,7 +2200,7 @@
             <!-- DQCA -->
             <article class="project-mini fade-up">
               <div class="mini-img-wrap">
-                <img src="assets/img/project-dqac.png" alt="DQCA App" loading="lazy" />
+                <img src="assets/img/project-dqac-banner.png" alt="DQCA App" loading="lazy" />
                 <div class="mini-img-overlay"></div>
               </div>
               <div class="project-mini-body">
@@ -2222,7 +2266,7 @@
             <!-- nGAGE -->
             <article class="project-mini fade-up">
               <div class="mini-img-wrap">
-                <img src="assets/img/project-ngage.png" alt="nGAGE Work App" loading="lazy" />
+                <img src="assets/img/project-ngage-banner.png" alt="nGAGE Work App" loading="lazy" />
                 <div class="mini-img-overlay"></div>
                 </div>
                 <div class="project-mini-body">
@@ -2294,7 +2338,7 @@
             <!-- GSTAR -->
             <article class="project-mini fade-up">
               <div class="mini-img-wrap">
-                <img src="assets/img/project-gstar.png" alt="GSTAR 2020 App" loading="lazy" />
+                <img src="assets/img/project-gstar-banner.png" alt="GSTAR 2020 App" loading="lazy" />
                 <div class="mini-img-overlay"></div>
               </div>
               <div class="project-mini-body">
@@ -2325,7 +2369,7 @@
             <!-- Slanka -->
             <article class="project-mini fade-up">
               <div class="mini-img-wrap">
-                <img src="assets/img/project-slanka.png" alt="Slanka App" loading="lazy" />
+                <img src="assets/img/project-slanka-banner.png" alt="Slanka App" loading="lazy" />
                 <div class="mini-img-overlay"></div>
               </div>
               <div class="project-mini-body">
@@ -2475,17 +2519,10 @@
             </h2>
           </div>
 
-          <!-- Photo strip — community moments -->
-          <div class="photo-strip fade-up" style="margin-top:36px;justify-content:flex-start">
-            <img src="assets/img/profile1.jpeg" alt="EmpowerHer session" class="photo-thumb" onclick="openLightbox(this.src,'EmpowerHer — Women in Tech','Took the stage at EmpowerHer to talk about building a career at the intersection of technology and leadership. The session explored how developers can grow beyond code — into mentors, advocates, and change-makers. A room full of women in tech, asking hard questions and pushing each other forward. That afternoon reminded me why representation in engineering isn\'t just important — it\'s essential.')" />
-            <img src="assets/img/profile3.jpg"  alt="Toastmasters MC"    class="photo-thumb" onclick="openLightbox(this.src,'Toastmasters District — Master of Ceremonies','Hosted a full Toastmasters District event as Master of Ceremonies — keeping attendees engaged, transitions seamless, and energy high across a packed schedule of speakers and competitions. Three terms as Club President taught me that the best leaders don\'t just speak well; they make everyone around them feel heard. This was one of those days.')" />
-            <img src="assets/img/profile2.jpg"  alt="Women Tech Quest"   class="photo-thumb" onclick="openLightbox(this.src,'Women Tech Quest by 10Pearls','Women Tech Quest brought together some of the most driven women in Pakistan\'s tech industry under one roof. Being part of the event meant contributing to a conversation that is slowly reshaping what the industry looks like. Every session and every connection made there is a thread in a bigger story about what Pakistani tech can become.')" />
-            <img src="assets/img/profile4.jpg"  alt="Rebel Speakers"     class="photo-thumb" onclick="openLightbox(this.src,'Rebel Speakers — 150th Session','The 150th meeting of Rebel Speakers — a milestone for a club that started as a small gathering and grew into a community of confident, articulate leaders. As President, watching members walk in nervous and walk out transformed was the most rewarding part of the role. Public speaking changes people. It changed me.')" />
-          </div>
 
           <div class="achievements-grid">
             <div class="achievement-card fade-up">
-              <div class="achievement-emoji">🎙️</div>
+              <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
               <div>
                 <h3 class="achievement-title">
                   Toastmasters International — Club President (3 Terms)
@@ -2496,10 +2533,14 @@
                   communication. Also served as Master of Ceremonies at a
                   Toastmasters District event.
                 </p>
+                <div class="photo-strip" style="margin-top:14px">
+                  <img src="assets/img/profile3.jpg" alt="Toastmasters MC" class="photo-thumb" onclick="openLightbox(this.src,'Toastmasters District — Master of Ceremonies','Hosted a full Toastmasters District event as Master of Ceremonies — keeping attendees engaged, transitions seamless, and energy high across a packed schedule of speakers and competitions. Three terms as Club President taught me that the best leaders don\'t just speak well; they make everyone around them feel heard. This was one of those days.')" />
+                  <img src="assets/img/profile4.jpg" alt="Rebel Speakers" class="photo-thumb" onclick="openLightbox(this.src,'Rebel Speakers — 150th Session','The 150th meeting of Rebel Speakers — a milestone for a club that started as a small gathering and grew into a community of confident, articulate leaders. As President, watching members walk in nervous and walk out transformed was the most rewarding part of the role. Public speaking changes people. It changed me.')" />
+                </div>
               </div>
             </div>
             <div class="achievement-card fade-up">
-              <div class="achievement-emoji">💜</div>
+              <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
               <div>
                 <h3 class="achievement-title">
                   EmpowerHer — Women in Tech Speaker
@@ -2509,10 +2550,14 @@
                   the EmpowerHer initiative, advocating for greater
                   representation of women in the tech industry.
                 </p>
+                <div class="photo-strip" style="margin-top:14px">
+                  <img src="assets/img/profile1.jpeg" alt="EmpowerHer session" class="photo-thumb" onclick="openLightbox(this.src,'EmpowerHer — Women in Tech','Took the stage at EmpowerHer to talk about building a career at the intersection of technology and leadership. The session explored how developers can grow beyond code — into mentors, advocates, and change-makers. A room full of women in tech, asking hard questions and pushing each other forward. That afternoon reminded me why representation in engineering isn\'t just important — it\'s essential.')" />
+                  <img src="assets/img/profile2.jpg" alt="Women Tech Quest" class="photo-thumb" onclick="openLightbox(this.src,'Women Tech Quest by 10Pearls','Women Tech Quest brought together some of the most driven women in Pakistan\'s tech industry under one roof. Being part of the event meant contributing to a conversation that is slowly reshaping what the industry looks like. Every session and every connection made there is a thread in a bigger story about what Pakistani tech can become.')" />
+                </div>
               </div>
             </div>
             <div class="achievement-card fade-up">
-              <div class="achievement-emoji">🎓</div>
+              <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/><line x1="22" y1="10" x2="22" y2="16.5"/></svg></div>
               <div>
                 <h3 class="achievement-title">
                   University Guest Speaker — Tech &amp; Career Inspiration
@@ -2525,7 +2570,7 @@
               </div>
             </div>
             <div class="achievement-card fade-up">
-              <div class="achievement-emoji">💻</div>
+              <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
               <div>
                 <h3 class="achievement-title">
                   Federal Government Coding Bootcamp — Lead Instructor
@@ -2537,11 +2582,40 @@
                 </p>
               </div>
             </div>
+            <div class="achievement-card fade-up" style="grid-column: 1 / -1; flex-direction: column; gap: 16px;">
+              <div style="width: 100%;">
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: var(--radius); overflow: hidden;">
+                  <iframe
+                    src="https://www.youtube.com/embed/OlWErpwY2LA"
+                    title="Rebel Stories — Swair Arshad"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+                <div>
+                  <h3 class="achievement-title">
+                    Rebel Stories — DPL Success Story Feature
+                  </h3>
+                  <p class="achievement-desc">
+                    Featured by DPL on their company channel and socials as part of
+                    their Rebel Stories series, spotlighting standout team members.
+                  </p>
+                </div>
+              </div>
+            </div>
             <div class="achievement-card fade-up">
-              <div class="achievement-emoji">✍️</div>
+              <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
               <div>
                 <h3 class="achievement-title">
-                  Technical Blogger — Medium &amp; Dev.to
+                  Technical Blogger —
+                  <a href="https://medium.com/@swairaq" target="_blank" rel="noopener" class="inline-link">Medium</a>
+                  &amp;
+                  <a href="https://dev.to/swair_aq" target="_blank" rel="noopener" class="inline-link">Dev.to</a>
                 </h3>
                 <p class="achievement-desc">
                   Active author writing about React Native development, mobile
@@ -2550,7 +2624,7 @@
               </div>
             </div>
             <div class="achievement-card fade-up">
-              <div class="achievement-emoji">⚡</div>
+              <div class="achievement-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
               <div>
                 <h3 class="achievement-title">
                   Agile Practitioner &amp; Team Lead
@@ -2658,7 +2732,7 @@
                 <div class="spinner"></div>
               </button>
               <div class="form-success" id="formSuccess">
-                ✅ Message sent! I'll get back to you within 24 hours.
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Message sent! I'll get back to you within 24 hours.
               </div>
             </form>
 
@@ -2687,6 +2761,18 @@
                 </svg>
                 Medium Blog
               </a>
+              <a href="https://dev.to/swair_aq" target="_blank" rel="noopener" class="contact-link">
+                <svg width="15" height="15" viewBox="0 0 448 512" fill="currentColor">
+                  <path d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35 3.88-2.9 5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM398.99 32H49.01C21.94 32 0 53.94 0 81.01v349.98C0 458.06 21.94 480 49.01 480h349.98c27.07 0 49.01-21.94 49.01-49.01V81.01C448 53.94 426.06 32 398.99 32zM158.4 314.36c0 15.09-4.51 27.79-13.52 38.11-9.02 10.32-21.91 15.48-38.68 15.48H55.03V166.05h51.71c16.03 0 28.66 4.98 37.86 14.94 9.2 9.96 13.8 22.5 13.8 37.62v95.75zM294.4 213.71h-59.75v45.15h37.02v33.65h-37.02v45.15h59.75v33.65h-93.4V180.06h93.4v33.65zM389.65 366.15h-31.94l-51.4-186.09h35.24l32.34 121.05 32.34-121.05h35.24l-51.82 186.09z"/>
+                </svg>
+                Dev.to
+              </a>
+              <a href="https://github.com/swairaq" target="_blank" rel="noopener" class="contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                GitHub
+              </a>
             </div>
           </div>
         </div>
@@ -2700,6 +2786,8 @@
           <a href="https://github.com/swairAQ" target="_blank" rel="noopener">GitHub</a>
           ·
           <a href="https://medium.com/@swairaq" target="_blank" rel="noopener">Blog</a>
+          ·
+          <a href="https://dev.to/swair_aq" target="_blank" rel="noopener">Dev.to</a>
           · <a href="assets/pdf/swair-cv.pdf" download>Download CV</a>
         </p>
       </div>
